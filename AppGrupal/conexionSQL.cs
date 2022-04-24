@@ -10,10 +10,9 @@ namespace AppGrupal
 {
     class conexionSQL
     {
-        SqlConnection conexionDB = new SqlConnection();
-        SqlCommand comando = new SqlCommand();
-
-        string cadenaConexion = "server=localhost; database=Productos; integrated security=true;";
+        public SqlConnection conexionDB = new SqlConnection();
+        public SqlCommand comando = new SqlCommand();
+        public string cadenaConexion = "server=localhost; database=Productos; integrated security=true;";
 
         public SqlConnection abrirConexion()
         {
@@ -29,20 +28,18 @@ namespace AppGrupal
             }
             return conexionDB;
         }
-
-        public SqlConnection cerrarConexion()
+        public void cerrarConexion()
         {
             try
             {
-                conexionDB.ConnectionString = cadenaConexion;
                 conexionDB.Close();
                 //MessageBox.Show("Se cerro la conexion con la DB");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo cerrar la conexion con la DB" + ex.Message);
+                MessageBox.Show("No se pudo cerrar la conexion con la DB: " + ex.Message);
             }
-            return conexionDB;
         }
+        public string stringConexion() { return cadenaConexion; }
     }
 }
