@@ -30,11 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.todosLosProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosXFiltroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,39 +60,41 @@
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
-            // listasToolStripMenuItem
-            // 
-            this.listasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.todosLosProductosToolStripMenuItem,
-            this.productosXFiltroToolStripMenuItem});
-            this.listasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listasToolStripMenuItem.Name = "listasToolStripMenuItem";
-            this.listasToolStripMenuItem.Size = new System.Drawing.Size(79, 25);
-            this.listasToolStripMenuItem.Text = "Listados";
-            // 
             // agregarToolStripMenuItem
             // 
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
             this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.agregarToolStripMenuItem.Text = "Agregar";
+            this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
             this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.modificarToolStripMenuItem.Text = "Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
-            // todosLosProductosToolStripMenuItem
+            // listasToolStripMenuItem
             // 
-            this.todosLosProductosToolStripMenuItem.Name = "todosLosProductosToolStripMenuItem";
-            this.todosLosProductosToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
-            this.todosLosProductosToolStripMenuItem.Text = "Todos los productos";
+            this.listasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productosXFiltroToolStripMenuItem,
+            this.stockToolStripMenuItem});
+            this.listasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listasToolStripMenuItem.Name = "listasToolStripMenuItem";
+            this.listasToolStripMenuItem.Size = new System.Drawing.Size(79, 25);
+            this.listasToolStripMenuItem.Text = "Listados";
             // 
             // productosXFiltroToolStripMenuItem
             // 
             this.productosXFiltroToolStripMenuItem.Name = "productosXFiltroToolStripMenuItem";
-            this.productosXFiltroToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.productosXFiltroToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.productosXFiltroToolStripMenuItem.Text = "Productos X Filtro";
+            // 
+            // stockToolStripMenuItem
+            // 
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.stockToolStripMenuItem.Text = "Stock Productos";
             // 
             // frmProductos
             // 
@@ -116,8 +118,8 @@
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem todosLosProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosXFiltroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
     }
 }
 

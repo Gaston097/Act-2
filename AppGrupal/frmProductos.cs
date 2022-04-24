@@ -16,5 +16,19 @@ namespace AppGrupal
         {
             InitializeComponent();
         }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgregarProductos ventana = new frmAgregarProductos();
+
+            ventana.ShowDialog();
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmModificarProductos ventana = new frmModificarProductos();
+
+            ventana.ShowDialog();
+        }
     }
 }
