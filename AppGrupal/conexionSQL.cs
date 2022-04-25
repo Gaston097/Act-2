@@ -12,8 +12,8 @@ namespace AppGrupal
     {
         public SqlConnection conexionDB = new SqlConnection();
         public SqlCommand comando = new SqlCommand();
-        public string cadenaConexion = "server=localhost; database=Productos; integrated security=true;";
-
+        public string cadenaConexion = "Data Source=DESKTOP-MHSQT5A\\SQLEXPRESS; database=Productos; integrated security=true;";
+        //Data Source = GANTCHEVI\SQLEXPRESS
         public SqlConnection abrirConexion()
         {
             try

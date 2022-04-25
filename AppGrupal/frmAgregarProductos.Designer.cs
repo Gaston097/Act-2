@@ -93,15 +93,19 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtCodigo.Location = new System.Drawing.Point(144, 63);
             this.txtCodigo.MaxLength = 20;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(441, 25);
-            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.TabIndex = 5;        
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtDescripcion.Location = new System.Drawing.Point(144, 99);
             this.txtDescripcion.MaxLength = 50;
@@ -111,6 +115,8 @@
             // 
             // txtPrecioVenta
             // 
+            this.txtPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecioVenta.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPrecioVenta.Location = new System.Drawing.Point(145, 135);
             this.txtPrecioVenta.MaxLength = 13;
@@ -121,9 +127,12 @@
             // 
             // txtObservaciones
             // 
+            this.txtObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtObservaciones.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtObservaciones.Location = new System.Drawing.Point(19, 200);
-            this.txtObservaciones.MaxLength = 255;
+            this.txtObservaciones.Location = new System.Drawing.Point(24, 200);
+            this.txtObservaciones.MaxLength = 500;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(567, 117);
@@ -131,6 +140,7 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Location = new System.Drawing.Point(480, 332);
             this.btnAgregar.Name = "btnAgregar";
@@ -155,6 +165,8 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblTitulo);
+            this.MaximumSize = new System.Drawing.Size(921, 598);
+            this.MinimumSize = new System.Drawing.Size(619, 420);
             this.Name = "frmAgregarProductos";
             this.Text = "frmAgregarProductos";
             this.ResumeLayout(false);
