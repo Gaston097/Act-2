@@ -8,6 +8,7 @@ namespace AppGrupal
 {
     class Producto
     {
+        public int id { get; set; }
         public string codigo { get; set; }
         public string descripcion { get; set; }
         public decimal precioVenta { get; set; }
@@ -15,7 +16,7 @@ namespace AppGrupal
         public int stock { get; set; }
         public string proveedor { get; set; }
         public string observaciones { get; set; }
-        public string fechaAlta { get; set; }
-        public string fechaBaja { get; set; }
+        public DateTime fechaAlta { get; set; }
+        public DateTime fechaBaja { get; set; }
     }
 }

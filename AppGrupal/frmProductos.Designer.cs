@@ -32,9 +32,9 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todosLosProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosXFiltroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.todosLosProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.listasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(456, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1102, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,6 +77,13 @@
             this.listasToolStripMenuItem.Size = new System.Drawing.Size(79, 25);
             this.listasToolStripMenuItem.Text = "Listados";
             // 
+            // todosLosProductosToolStripMenuItem
+            // 
+            this.todosLosProductosToolStripMenuItem.Name = "todosLosProductosToolStripMenuItem";
+            this.todosLosProductosToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.todosLosProductosToolStripMenuItem.Text = "Todos los productos";
+            this.todosLosProductosToolStripMenuItem.Click += new System.EventHandler(this.todosLosProductosToolStripMenuItem_Click);
+            // 
             // productosXFiltroToolStripMenuItem
             // 
             this.productosXFiltroToolStripMenuItem.Name = "productosXFiltroToolStripMenuItem";
@@ -89,20 +96,17 @@
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.stockToolStripMenuItem.Text = "Stock Productos";
             // 
-            // todosLosProductosToolStripMenuItem
-            // 
-            this.todosLosProductosToolStripMenuItem.Name = "todosLosProductosToolStripMenuItem";
-            this.todosLosProductosToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
-            this.todosLosProductosToolStripMenuItem.Text = "Todos los productos";
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 449);
+            this.ClientSize = new System.Drawing.Size(1102, 523);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Productos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

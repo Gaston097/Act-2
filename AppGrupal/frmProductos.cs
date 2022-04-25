@@ -30,5 +30,19 @@ namespace AppGrupal
 
             ventana.ShowDialog();
         }
+
+        private void todosLosProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProductosTodos ventana = new frmProductosTodos();
+
+            //foreach (var item in Application.OpenForms)
+            //{
+            //    if (item.GetType() == typeof(frmProductosTodos))
+            //        return;
+            //}
+
+            //ventana.MdiParent = this;
+            ventana.ShowDialog();
+        }
     }
 }
