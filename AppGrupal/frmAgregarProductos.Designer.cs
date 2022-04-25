@@ -37,14 +37,14 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(238, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(225, 10);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(157, 40);
             this.lblTitulo.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblCodigo.Location = new System.Drawing.Point(14, 68);
+            this.lblCodigo.Location = new System.Drawing.Point(14, 63);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(77, 25);
             this.lblCodigo.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblDescripcion.Location = new System.Drawing.Point(14, 104);
+            this.lblDescripcion.Location = new System.Drawing.Point(14, 99);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(116, 25);
             this.lblDescripcion.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             this.lblPrecioVenta.AutoSize = true;
             this.lblPrecioVenta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblPrecioVenta.Location = new System.Drawing.Point(14, 140);
+            this.lblPrecioVenta.Location = new System.Drawing.Point(14, 135);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
             this.lblPrecioVenta.Size = new System.Drawing.Size(124, 25);
             this.lblPrecioVenta.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             this.lblObservaciones.AutoSize = true;
             this.lblObservaciones.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblObservaciones.Location = new System.Drawing.Point(14, 177);
+            this.lblObservaciones.Location = new System.Drawing.Point(14, 172);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(141, 25);
             this.lblObservaciones.TabIndex = 4;
@@ -94,7 +94,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtCodigo.Location = new System.Drawing.Point(144, 68);
+            this.txtCodigo.Location = new System.Drawing.Point(144, 63);
             this.txtCodigo.MaxLength = 20;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(441, 25);
@@ -103,7 +103,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtDescripcion.Location = new System.Drawing.Point(144, 104);
+            this.txtDescripcion.Location = new System.Drawing.Point(144, 99);
             this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(441, 25);
@@ -112,7 +112,7 @@
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPrecioVenta.Location = new System.Drawing.Point(145, 140);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(145, 135);
             this.txtPrecioVenta.MaxLength = 13;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(114, 25);
@@ -122,30 +122,30 @@
             // txtObservaciones
             // 
             this.txtObservaciones.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtObservaciones.Location = new System.Drawing.Point(19, 205);
+            this.txtObservaciones.Location = new System.Drawing.Point(19, 200);
             this.txtObservaciones.MaxLength = 255;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(567, 117);
             this.txtObservaciones.TabIndex = 8;
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(477, 337);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 40);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(480, 332);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(106, 40);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmAgregarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 391);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(603, 381);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.txtPrecioVenta);
             this.Controls.Add(this.txtDescripcion);
@@ -173,6 +173,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.TextBox txtObservaciones;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

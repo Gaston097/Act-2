@@ -30,7 +30,7 @@ namespace AppGrupal
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             negocioProducto np = new negocioProducto();
             Producto p = new Producto();
