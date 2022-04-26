@@ -36,6 +36,31 @@ namespace AppGrupal
                 return false;
             }
         }
+        public bool modificarProducto(Producto p, int idMarca, int idCategoria)
+        {
+            conexionSQL conex = new conexionSQL();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "UPDATE Articulos SET Codigo = '" + p.codigo + "', Nombre = '" + p.nombre + "', Descripcion = '" + p.descripcion + "', idMarca = " + idMarca + ", idCategoria = " + idCategoria + ", Precio = " + p.precio + "WHERE id = " + p.id;
+                comando.Connection = conex.conexionDB;
+
+                conex.abrirConexion();
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                conex.cerrarConexion();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                conex.cerrarConexion();
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         public bool eliminarProducto(int idProducto)
         {
             conexionSQL conex = new conexionSQL();

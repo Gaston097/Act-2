@@ -37,7 +37,7 @@ namespace AppGrupal
 
             int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString());
 
-            if (MessageBox.Show("Quieres eliminar a este usuario?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
+            if (MessageBox.Show("Quieres eliminar este articulo?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
                 if (np.eliminarProducto(id))
                 {
@@ -47,6 +47,12 @@ namespace AppGrupal
                 else
                     MessageBox.Show("El articulo no se pudo eliminar");
             }
+        }
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmModificarProductos mp = new frmModificarProductos();
+            mp.cargarValores(dgvProductos);
+            this.mostrarProductosTodos_Load();
         }
     }
 }

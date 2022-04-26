@@ -50,9 +50,9 @@
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(224, 1);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(157, 40);
+            this.lblTitulo.Size = new System.Drawing.Size(129, 40);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Productos";
+            this.lblTitulo.Text = "Agregar";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblCodigo
@@ -216,7 +216,7 @@
             this.MaximumSize = new System.Drawing.Size(921, 598);
             this.MinimumSize = new System.Drawing.Size(619, 420);
             this.Name = "frmAgregarProductos";
-            this.Text = "frmAgregarProductos";
+            this.Text = "Agregar";
             this.ResumeLayout(false);
             this.PerformLayout();
 
