@@ -40,8 +40,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.cboxMarca = new System.Windows.Forms.ComboBox();
-            this.cboxCategoria = new System.Windows.Forms.ComboBox();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -104,7 +104,7 @@
             this.txtCodigo.MaxLength = 20;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(441, 32);
-            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.TabIndex = 1;
             // 
             // txtNombre
             // 
@@ -115,7 +115,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(441, 32);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtPrecioVenta
             // 
@@ -126,7 +126,7 @@
             this.txtPrecioVenta.MaxLength = 13;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(114, 32);
-            this.txtPrecioVenta.TabIndex = 7;
+            this.txtPrecioVenta.TabIndex = 3;
             this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
             // 
             // txtDescripcion
@@ -140,7 +140,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(572, 158);
-            this.txtDescripcion.TabIndex = 8;
+            this.txtDescripcion.TabIndex = 6;
             // 
             // btnAgregar
             // 
@@ -174,33 +174,33 @@
             this.lblCategoria.TabIndex = 11;
             this.lblCategoria.Text = "Categoria";
             // 
-            // cboxMarca
+            // cbMarca
             // 
-            this.cboxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxMarca.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.cboxMarca.FormattingEnabled = true;
-            this.cboxMarca.Location = new System.Drawing.Point(145, 174);
-            this.cboxMarca.Name = "cboxMarca";
-            this.cboxMarca.Size = new System.Drawing.Size(440, 33);
-            this.cboxMarca.TabIndex = 12;
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMarca.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Location = new System.Drawing.Point(145, 174);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(440, 33);
+            this.cbMarca.TabIndex = 4;
             // 
-            // cboxCategoria
+            // cbCategoria
             // 
-            this.cboxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxCategoria.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.cboxCategoria.FormattingEnabled = true;
-            this.cboxCategoria.Location = new System.Drawing.Point(144, 222);
-            this.cboxCategoria.Name = "cboxCategoria";
-            this.cboxCategoria.Size = new System.Drawing.Size(441, 33);
-            this.cboxCategoria.TabIndex = 13;
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(144, 222);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(441, 33);
+            this.cbCategoria.TabIndex = 5;
             // 
             // frmAgregarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 514);
-            this.Controls.Add(this.cboxCategoria);
-            this.Controls.Add(this.cboxMarca);
+            this.Controls.Add(this.cbCategoria);
+            this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.btnAgregar);
@@ -236,7 +236,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.ComboBox cboxMarca;
-        private System.Windows.Forms.ComboBox cboxCategoria;
+        private System.Windows.Forms.ComboBox cbMarca;
+        private System.Windows.Forms.ComboBox cbCategoria;
     }
 }

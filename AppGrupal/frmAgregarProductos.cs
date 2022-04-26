@@ -14,10 +14,10 @@ namespace AppGrupal
     {
         public frmAgregarProductos()
         {
-            negocioProducto p = new negocioProducto();
+            negocioProducto np = new negocioProducto();
             InitializeComponent();
-            p.cbMarcas(cboxMarca);
-            p.cbCategorias(cboxCategoria);
+            np.obtenerMarcas(cbMarca);
+            np.obtenerCategorias(cbCategoria);
         }
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -82,10 +82,7 @@ namespace AppGrupal
                 p.descripcion = txtDescripcion.Text;
                 p.precioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
 
-                int idMarca = Convert.ToInt32(cboxMarca.SelectedValue);
-                int idCategoria = Convert.ToInt32(cboxCategoria.SelectedValue);
- 
-                if (np.agregarProducto(p, idMarca, idCategoria))
+                if (np.agregarProducto(p, Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbCategoria.SelectedValue)))
                 {
                     MessageBox.Show("Producto agregado con exito");  
                     this.Close();

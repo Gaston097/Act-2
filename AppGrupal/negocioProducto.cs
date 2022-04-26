@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace AppGrupal
 {
@@ -14,7 +15,6 @@ namespace AppGrupal
         {
             conexionSQL conex = new conexionSQL();
             SqlCommand comando = new SqlCommand();
-
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
@@ -116,59 +116,48 @@ namespace AppGrupal
                 throw ex;
             }
         }
-
-        public void cbMarcas (ComboBox cbM)
+        public DataTable obtenerMarcas(ComboBox cbMarca)
         {
             conexionSQL conex = new conexionSQL();
             SqlCommand comando = new SqlCommand();
-
-            try
+            DataTable dt = new DataTable(); 
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT id, descripcion FROM Marcas";
-                comando.Connection = conex.conexionDB;
-
                 conex.abrirConexion();
 
-                SqlDataReader lector = comando.ExecuteReader();
+                string consulta = "SELECT id, descripcion FROM Marcas";
+                SqlCommand cmd = new SqlCommand(consulta, conex.conexionDB);
 
-                while (lector.Read())
-                {
-                    cbM.Items.Add((string)lector["descripcion"]);
-                    cbM.ValueMember = ((int)lector["id"]).ToString();
-                }
-
-                }
-            catch (Exception ex)
-            { 
-                MessageBox.Show(ex.Message);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
             }
-        }
+            cbMarca.ValueMember = "id";
+            cbMarca.DisplayMember = "descripcion";
+            cbMarca.DataSource = dt;
+            cbMarca.SelectedIndex = -1;
 
-        public void cbCategorias(ComboBox cbC)
+            return dt;
+        }
+        public DataTable obtenerCategorias(ComboBox cbCategoria)
         {
             conexionSQL conex = new conexionSQL();
             SqlCommand comando = new SqlCommand();
-
-            try
+            DataTable dt = new DataTable();
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT id, descripcion FROM Categorias";
-                comando.Connection = conex.conexionDB;
-
                 conex.abrirConexion();
 
-                SqlDataReader lector = comando.ExecuteReader();
+                string consulta = "SELECT id, descripcion FROM Categorias";
+                SqlCommand cmd = new SqlCommand(consulta, conex.conexionDB);
 
-                while (lector.Read())
-                {
-                    cbC.Items.Add((string)lector["descripcion"]);
-                }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            cbCategoria.ValueMember = "id";
+            cbCategoria.DisplayMember = "descripcion";
+            cbCategoria.DataSource = dt;
+            cbCategoria.SelectedIndex = -1;
+
+            return dt;
         }
+
     }
 }
