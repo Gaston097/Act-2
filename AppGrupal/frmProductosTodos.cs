@@ -19,13 +19,34 @@ namespace AppGrupal
         }
         public void mostrarProductosTodos_Load()
         {
-            negocioProducto p = new negocioProducto();
+            listasProductos p = new listasProductos();
+
+            dgvProductos.AllowUserToAddRows = false;
+
+            dgvProductos.Columns.Clear();
 
             dgvProductos.DataSource = p.listar();
 
             this.dgvProductos.Columns["id"].Visible = false;
-            this.dgvProductos.Columns["imagen"].Visible = false;
+            this.dgvProductos.Columns["imagen"].Visible = false; 
+        }
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            negocioProducto np = new negocioProducto();
+            frmProductosTodos p = new frmProductosTodos();
 
+            int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString());
+
+            if (MessageBox.Show("Quieres eliminar a este usuario?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
+            {
+                if (np.eliminarProducto(id))
+                {
+                    MessageBox.Show("Articulo eliminado con exito");
+                    this.mostrarProductosTodos_Load();
+                }
+                else
+                    MessageBox.Show("El articulo no se pudo eliminar");
+            }
         }
     }
 }

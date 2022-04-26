@@ -80,7 +80,7 @@ namespace AppGrupal
                 p.codigo = txtCodigo.Text;
                 p.nombre = txtNombre.Text;
                 p.descripcion = txtDescripcion.Text;
-                p.precioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                p.precio = Convert.ToDecimal(txtPrecioVenta.Text);
 
                 if (np.agregarProducto(p, Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbCategoria.SelectedValue)))
                 {

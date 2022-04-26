@@ -18,7 +18,7 @@ namespace AppGrupal
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "INSERT INTO Articulos VALUES ('" + p.codigo + "', '" + p.nombre + "', '" + p.descripcion + "', " + idMarca + ", " + idCategoria + ", '" + p.imagen + "', " + p.precioVenta + ")";
+                comando.CommandText = "INSERT INTO Articulos VALUES ('" + p.codigo + "', '" + p.nombre + "', '" + p.descripcion + "', " + idMarca + ", " + idCategoria + ", '" + p.imagen + "', " + p.precio + ", 1)";
                 comando.Connection = conex.conexionDB;
 
                 conex.abrirConexion();
@@ -32,88 +32,33 @@ namespace AppGrupal
             catch (Exception ex)
             {
                 conex.cerrarConexion();
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
-
-        public List<Producto> listar()
+        public bool eliminarProducto(int idProducto)
         {
-            List<Producto> lista = new List<Producto>();
             conexionSQL conex = new conexionSQL();
             SqlCommand comando = new SqlCommand();
-
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.id id, A.codigo codigo, A.nombre nombre, A.descripcion descripcion, A.precio precio, M.Descripcion marca, C.Descripcion categoria, A.ImagenUrl imagen FROM Articulos A INNER JOIN Marcas M on M.id = A.idMarca INNER JOIN Categorias C on C.id = A.IdCategoria";
+                comando.CommandText = "UPDATE Articulos SET Estado = 0 WHERE id = " + idProducto;
                 comando.Connection = conex.conexionDB;
 
                 conex.abrirConexion();
 
                 SqlDataReader lector = comando.ExecuteReader();
 
-                while (lector.Read())
-                {
-                    Producto p = new Producto();
-
-                    p.id = (int)lector["id"];
-                    p.codigo = (string)lector["codigo"];
-                    p.nombre = (string)lector["nombre"];
-                    p.descripcion = (string)lector["descripcion"];
-                    p.precioVenta = (decimal)lector["precio"];
-                    p.marca = (string)lector["marca"];
-                    p.categoria = (string)lector["categoria"];
-                    p.imagen = (string)lector["imagen"];
-
-                    lista.Add(p);
-                }
                 conex.cerrarConexion();
-                return lista;
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show(ex.Message);
-                return lista;
-            }
-        }
 
-        public List<Producto> listarModificar()
-        {
-            List<Producto> lista = new List<Producto>();
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
-
-            try
-            {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.id id, A.codigo codigo, A.nombre nombre, A.descripcion descripcion, A.precio precio, M.Descripcion marca, C.Descripcion categoria, A.ImagenUrl imagen FROM Articulos A INNER JOIN Marcas M on M.id = A.idMarca INNER JOIN Categorias C on C.id = A.IdCategoria";
-                comando.Connection = conex.conexionDB;
-
-                conex.abrirConexion();
-
-                SqlDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
-                {
-                    Producto p = new Producto();
-
-                    p.id = (int)lector["id"];
-                    p.codigo = (string)lector["codigo"];
-                    p.nombre = (string)lector["nombre"];
-                    p.descripcion = (string)lector["descripcion"];
-                    p.precioVenta = (decimal)lector["precioVenta"];
-                    p.marca = (string)lector["marca"];
-                    p.categoria = (string)lector["categoria"];
-                    p.imagen = (string)lector["imagen"];
-
-                    lista.Add(p);
-                }
-                conex.cerrarConexion();
-                return lista;
+                return true;
             }
             catch (Exception ex)
             {
-                throw ex;
+                conex.cerrarConexion();
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
         public DataTable obtenerMarcas(ComboBox cbMarca)
@@ -124,12 +69,13 @@ namespace AppGrupal
             {
                 conex.abrirConexion();
 
-                string consulta = "SELECT id, descripcion FROM Marcas";
+                string consulta = "SELECT id, descripcion FROM Marcas WHERE Estado = 1";
                 SqlCommand cmd = new SqlCommand(consulta, conex.conexionDB);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
             }
+
             cbMarca.ValueMember = "id";
             cbMarca.DisplayMember = "descripcion";
             cbMarca.DataSource = dt;
@@ -145,12 +91,13 @@ namespace AppGrupal
             {
                 conex.abrirConexion();
 
-                string consulta = "SELECT id, descripcion FROM Categorias";
+                string consulta = "SELECT id, descripcion FROM Categorias WHERE Estado = 1";
                 SqlCommand cmd = new SqlCommand(consulta, conex.conexionDB);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
             }
+
             cbCategoria.ValueMember = "id";
             cbCategoria.DisplayMember = "descripcion";
             cbCategoria.DataSource = dt;

@@ -71,6 +71,7 @@
     <Compile Include="frmProductosTodos.Designer.cs">
       <DependentUpon>frmProductosTodos.cs</DependentUpon>
     </Compile>
+    <Compile Include="listasProductos.cs" />
     <Compile Include="negocioProducto.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
