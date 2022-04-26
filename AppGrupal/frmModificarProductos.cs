@@ -45,13 +45,13 @@ namespace AppGrupal
             else
                 txtCodigo.BackColor = Color.White;
 
-            if (String.IsNullOrEmpty(txtDescripcion.Text))
+            if (String.IsNullOrEmpty(txtNombre.Text))
             {
-                txtDescripcion.BackColor = Color.Red;
+                txtNombre.BackColor = Color.Red;
                 validar = true;
             }
             else
-                txtDescripcion.BackColor = Color.White;
+                txtNombre.BackColor = Color.White;
 
             if (String.IsNullOrEmpty(txtPrecioVenta.Text))
             {
@@ -61,32 +61,32 @@ namespace AppGrupal
             else
                 txtPrecioVenta.BackColor = Color.White;
 
-            if (String.IsNullOrEmpty(txtObservaciones.Text))
+            if (String.IsNullOrEmpty(txtDescripcion.Text))
             {
-                txtObservaciones.BackColor = Color.Red;
+                txtDescripcion.BackColor = Color.Red;
                 validar = true;
             }
             else
-                txtObservaciones.BackColor = Color.White;
+                txtDescripcion.BackColor = Color.White;
 
             if (validar==false)
             {
                 txtCodigo.BackColor = Color.White;
-                txtDescripcion.BackColor = Color.White;
+                txtNombre.BackColor = Color.White;
                 txtPrecioVenta.BackColor = Color.White;
-                txtObservaciones.BackColor = Color.White;
+                txtDescripcion.BackColor = Color.White;
 
                 p.codigo = txtCodigo.Text;
-                p.descripcion = txtDescripcion.Text;
+                p.nombre = txtNombre.Text;
+                p.descripcion = txtNombre.Text;
                 p.precioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
-                p.observaciones = txtObservaciones.Text;
 
-                if (np.agregarProducto(p))
-                {
-                    MessageBox.Show("Producto modificado con exito");
-                    this.Close();
-                }
-                else MessageBox.Show("El producto no se modifico");
+                //if (np.agregarProducto(p))
+                //{
+                //    MessageBox.Show("Producto modificado con exito");
+                //    this.Close();
+                //}
+                //else MessageBox.Show("El producto no se modifico");
             }
 
         }

@@ -24,11 +24,8 @@ namespace AppGrupal
             dgvProductos.DataSource = p.listar();
 
             this.dgvProductos.Columns["id"].Visible = false;
-            this.dgvProductos.Columns["stock"].Visible = false;
-            this.dgvProductos.Columns["proveedor"].Visible = false;
-            this.dgvProductos.Columns["observaciones"].Visible = false;
-            this.dgvProductos.Columns["fechaAlta"].Visible = false;
-            this.dgvProductos.Columns["fechaBaja"].Visible = false;
+            this.dgvProductos.Columns["imagen"].Visible = false;
+
         }
     }
 }

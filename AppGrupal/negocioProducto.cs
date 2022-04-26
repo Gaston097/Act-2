@@ -10,7 +10,7 @@ namespace AppGrupal
 {
     class negocioProducto
     {
-        public bool agregarProducto(Producto p)
+        public bool agregarProducto(Producto p, int idMarca, int idCategoria)
         {
             conexionSQL conex = new conexionSQL();
             SqlCommand comando = new SqlCommand();
@@ -18,7 +18,7 @@ namespace AppGrupal
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "INSERT INTO Productos VALUES ('" + p.codigo + "', '" + p.descripcion + "', " + p.precioVenta + "," + p.stock + ", 1, 1, '" + p.observaciones + "',GETDATE() ,NULL,1)";
+                comando.CommandText = "INSERT INTO Articulos VALUES ('" + p.codigo + "', '" + p.nombre + "', '" + p.descripcion + "', " + idMarca + ", " + idCategoria + ", '" + p.imagen + "', " + p.precioVenta + ")";
                 comando.Connection = conex.conexionDB;
 
                 conex.abrirConexion();
@@ -45,7 +45,7 @@ namespace AppGrupal
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT P.id id, P.codigo codigo, P.descripcion descripcion, P.precioVenta precioVenta, P.stock stock, M.nombre marca, PROV.razonSocial razonSocial, P.observaciones observaciones, P.fechaAlta fechaAlta FROM Productos P INNER JOIN Marcas M on M.id = P.idMarca INNER JOIN Proveedores PROV on PROV.id = P.idProveedor WHERE P.estado = 1";
+                comando.CommandText = "SELECT A.id id, A.codigo codigo, A.nombre nombre, A.descripcion descripcion, A.precio precio, M.Descripcion marca, C.Descripcion categoria, A.ImagenUrl imagen FROM Articulos A INNER JOIN Marcas M on M.id = A.idMarca INNER JOIN Categorias C on C.id = A.IdCategoria";
                 comando.Connection = conex.conexionDB;
 
                 conex.abrirConexion();
@@ -58,13 +58,12 @@ namespace AppGrupal
 
                     p.id = (int)lector["id"];
                     p.codigo = (string)lector["codigo"];
+                    p.nombre = (string)lector["nombre"];
                     p.descripcion = (string)lector["descripcion"];
-                    p.precioVenta = (decimal)lector["precioVenta"];
-                    p.stock = (int)lector["stock"];
+                    p.precioVenta = (decimal)lector["precio"];
                     p.marca = (string)lector["marca"];
-                    p.proveedor = (string)lector["razonSocial"];
-                    p.observaciones = (string)lector["observaciones"];
-                    p.fechaAlta = (DateTime)lector["fechaAlta"];
+                    p.categoria = (string)lector["categoria"];
+                    p.imagen = (string)lector["imagen"];
 
                     lista.Add(p);
                 }
@@ -74,7 +73,7 @@ namespace AppGrupal
             catch (ArgumentOutOfRangeException ex)
             {
                 MessageBox.Show(ex.Message);
-                    return lista;
+                return lista;
             }
         }
 
@@ -87,7 +86,7 @@ namespace AppGrupal
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT P.id, P.codigo, P.descripcion, P.precioVenta, P.stock, M.nombre, PROV.razonSocial, P.observaciones, P.fechaAlta FROM Productos P INNER JOIN Marcas M on M.id = P.idMarca INNER JOIN Proveedores PROV on PROV.id = P.idProveedor WHERE P.estado = 1";
+                comando.CommandText = "SELECT A.id id, A.codigo codigo, A.nombre nombre, A.descripcion descripcion, A.precio precio, M.Descripcion marca, C.Descripcion categoria, A.ImagenUrl imagen FROM Articulos A INNER JOIN Marcas M on M.id = A.idMarca INNER JOIN Categorias C on C.id = A.IdCategoria";
                 comando.Connection = conex.conexionDB;
 
                 conex.abrirConexion();
@@ -100,13 +99,12 @@ namespace AppGrupal
 
                     p.id = (int)lector["id"];
                     p.codigo = (string)lector["codigo"];
+                    p.nombre = (string)lector["nombre"];
                     p.descripcion = (string)lector["descripcion"];
                     p.precioVenta = (decimal)lector["precioVenta"];
-                    p.stock = (int)lector["stock"];
-                    p.marca = (string)lector["nombre"];
-                    p.proveedor = (string)lector["razonSocial"];
-                    p.observaciones = (string)lector["observaciones"];
-                    p.fechaAlta = (DateTime)lector["fechaAlta"];
+                    p.marca = (string)lector["marca"];
+                    p.categoria = (string)lector["categoria"];
+                    p.imagen = (string)lector["imagen"];
 
                     lista.Add(p);
                 }
@@ -119,5 +117,58 @@ namespace AppGrupal
             }
         }
 
+        public void cbMarcas (ComboBox cbM)
+        {
+            conexionSQL conex = new conexionSQL();
+            SqlCommand comando = new SqlCommand();
+
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT id, descripcion FROM Marcas";
+                comando.Connection = conex.conexionDB;
+
+                conex.abrirConexion();
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    cbM.Items.Add((string)lector["descripcion"]);
+                    cbM.ValueMember = ((int)lector["id"]).ToString();
+                }
+
+                }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void cbCategorias(ComboBox cbC)
+        {
+            conexionSQL conex = new conexionSQL();
+            SqlCommand comando = new SqlCommand();
+
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT id, descripcion FROM Categorias";
+                comando.Connection = conex.conexionDB;
+
+                conex.abrirConexion();
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    cbC.Items.Add((string)lector["descripcion"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

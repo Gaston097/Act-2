@@ -14,9 +14,11 @@ namespace AppGrupal
     {
         public frmAgregarProductos()
         {
+            negocioProducto p = new negocioProducto();
             InitializeComponent();
+            p.cbMarcas(cboxMarca);
+            p.cbCategorias(cboxCategoria);
         }
-
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -29,7 +31,6 @@ namespace AppGrupal
                 e.Handled = true;
             }
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             negocioProducto np = new negocioProducto();
@@ -45,13 +46,13 @@ namespace AppGrupal
             else
                 txtCodigo.BackColor = Color.White;
 
-            if (String.IsNullOrEmpty(txtDescripcion.Text))
+            if (String.IsNullOrEmpty(txtNombre.Text))
             {
-                txtDescripcion.BackColor = Color.Red;
+                txtNombre.BackColor = Color.Red;
                 validar = true;
             }
             else
-                txtDescripcion.BackColor = Color.White;
+                txtNombre.BackColor = Color.White;
 
             if (String.IsNullOrEmpty(txtPrecioVenta.Text))
             {
@@ -61,27 +62,31 @@ namespace AppGrupal
             else
                 txtPrecioVenta.BackColor = Color.White;
 
-            if (String.IsNullOrEmpty(txtObservaciones.Text))
+            if (String.IsNullOrEmpty(txtDescripcion.Text))
             {
-                txtObservaciones.BackColor = Color.Red;
+                txtDescripcion.BackColor = Color.Red;
                 validar = true;
             }
             else
-                txtObservaciones.BackColor = Color.White;
+                txtDescripcion.BackColor = Color.White;
 
             if (validar==false)
             {
                 txtCodigo.BackColor = Color.White;
-                txtDescripcion.BackColor = Color.White;
+                txtNombre.BackColor = Color.White;
                 txtPrecioVenta.BackColor = Color.White;
-                txtObservaciones.BackColor = Color.White;
+                txtDescripcion.BackColor = Color.White;
 
                 p.codigo = txtCodigo.Text;
+                p.nombre = txtNombre.Text;
                 p.descripcion = txtDescripcion.Text;
                 p.precioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
-                p.observaciones = txtObservaciones.Text;
 
-                if (np.agregarProducto(p)) {
+                int idMarca = Convert.ToInt32(cboxMarca.SelectedValue);
+                int idCategoria = Convert.ToInt32(cboxCategoria.SelectedValue);
+ 
+                if (np.agregarProducto(p, idMarca, idCategoria))
+                {
                     MessageBox.Show("Producto agregado con exito");  
                     this.Close();
                 } 

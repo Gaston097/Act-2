@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblObservaciones = new System.Windows.Forms.Label();
-            this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblPrecioVenta = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblObservaciones
+            // lblDescripcion
             // 
-            this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblObservaciones.Location = new System.Drawing.Point(14, 169);
-            this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(141, 25);
-            this.lblObservaciones.TabIndex = 8;
-            this.lblObservaciones.Text = "Observaciones";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblDescripcion.Location = new System.Drawing.Point(14, 169);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(116, 25);
+            this.lblDescripcion.TabIndex = 8;
+            this.lblDescripcion.Text = "Descripcion";
             // 
             // lblPrecioVenta
             // 
@@ -60,15 +60,15 @@
             this.lblPrecioVenta.TabIndex = 7;
             this.lblPrecioVenta.Text = "Precio Venta";
             // 
-            // lblDescripcion
+            // lblNombre
             // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblDescripcion.Location = new System.Drawing.Point(14, 96);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(116, 25);
-            this.lblDescripcion.TabIndex = 6;
-            this.lblDescripcion.Text = "Descripcion";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblNombre.Location = new System.Drawing.Point(14, 96);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(86, 25);
+            this.lblNombre.TabIndex = 6;
+            this.lblNombre.Text = "Nombre";
             // 
             // lblCodigo
             // 
@@ -80,15 +80,15 @@
             this.lblCodigo.TabIndex = 5;
             this.lblCodigo.Text = "Codigo";
             // 
-            // txtObservaciones
+            // txtDescripcion
             // 
-            this.txtObservaciones.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtObservaciones.Location = new System.Drawing.Point(19, 197);
-            this.txtObservaciones.MaxLength = 255;
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(567, 117);
-            this.txtObservaciones.TabIndex = 12;
+            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtDescripcion.Location = new System.Drawing.Point(19, 197);
+            this.txtDescripcion.MaxLength = 255;
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(567, 117);
+            this.txtDescripcion.TabIndex = 12;
             // 
             // txtPrecioVenta
             // 
@@ -100,14 +100,14 @@
             this.txtPrecioVenta.TabIndex = 11;
             this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
             // 
-            // txtDescripcion
+            // txtNombre
             // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtDescripcion.Location = new System.Drawing.Point(144, 96);
-            this.txtDescripcion.MaxLength = 50;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(441, 25);
-            this.txtDescripcion.TabIndex = 10;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtNombre.Location = new System.Drawing.Point(144, 96);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(441, 25);
+            this.txtNombre.TabIndex = 10;
             // 
             // txtCodigo
             // 
@@ -144,16 +144,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 386);
+            this.ClientSize = new System.Drawing.Size(605, 386);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.txtObservaciones);
-            this.Controls.Add(this.txtPrecioVenta);
             this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtPrecioVenta);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.lblObservaciones);
-            this.Controls.Add(this.lblPrecioVenta);
             this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblPrecioVenta);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmModificarProductos";
             this.Text = "frmModificarProductos";
@@ -164,13 +164,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblObservaciones;
-        private System.Windows.Forms.Label lblPrecioVenta;
         private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblPrecioVenta;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox txtObservaciones;
-        private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtPrecioVenta;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label lblTitulo;

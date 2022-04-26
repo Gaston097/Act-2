@@ -56,9 +56,7 @@
             this.Text = "frmProductosTodos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
-
         }
-
         #endregion
         private System.Windows.Forms.DataGridView dgvProductos;
     }
