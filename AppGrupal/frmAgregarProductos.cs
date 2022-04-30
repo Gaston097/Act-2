@@ -70,17 +70,37 @@ namespace AppGrupal
             else
                 txtDescripcion.BackColor = Color.White;
 
+            if (String.IsNullOrEmpty(txtImagen.Text))
+            {
+                txtImagen.BackColor = Color.Red;
+                validar = true;
+            }
+            else
+                txtImagen.BackColor = Color.White;
+
+            if (cbCategoria.SelectedIndex == -1)
+            {
+                validar = true;
+            }
+
+            if (cbMarca.SelectedIndex == -1)
+            {
+                validar = true;
+            }
+
             if (validar==false)
             {
                 txtCodigo.BackColor = Color.White;
                 txtNombre.BackColor = Color.White;
                 txtPrecioVenta.BackColor = Color.White;
                 txtDescripcion.BackColor = Color.White;
+                txtImagen.BackColor = Color.White;
 
                 p.codigo = txtCodigo.Text;
                 p.nombre = txtNombre.Text;
                 p.descripcion = txtDescripcion.Text;
                 p.precio = Convert.ToDecimal(txtPrecioVenta.Text);
+                p.imagen = txtImagen.Text;
 
                 if (np.agregarProducto(p, Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbCategoria.SelectedValue)))
                 {

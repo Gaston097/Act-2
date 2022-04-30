@@ -41,7 +41,8 @@
             this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.txtImagen = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbCategoria
@@ -49,9 +50,9 @@
             this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(144, 223);
+            this.cbCategoria.Location = new System.Drawing.Point(144, 176);
             this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(441, 33);
+            this.cbCategoria.Size = new System.Drawing.Size(453, 33);
             this.cbCategoria.TabIndex = 21;
             // 
             // cbMarca
@@ -59,16 +60,16 @@
             this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(145, 175);
+            this.cbMarca.Location = new System.Drawing.Point(145, 131);
             this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(440, 33);
+            this.cbMarca.Size = new System.Drawing.Size(452, 33);
             this.cbMarca.TabIndex = 19;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblCategoria.Location = new System.Drawing.Point(14, 226);
+            this.lblCategoria.Location = new System.Drawing.Point(14, 180);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(98, 25);
             this.lblCategoria.TabIndex = 25;
@@ -78,7 +79,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblMarca.Location = new System.Drawing.Point(14, 178);
+            this.lblMarca.Location = new System.Drawing.Point(14, 135);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(67, 25);
             this.lblMarca.TabIndex = 24;
@@ -88,7 +89,7 @@
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(469, 464);
+            this.btnModificar.Location = new System.Drawing.Point(480, 466);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(117, 40);
             this.btnModificar.TabIndex = 23;
@@ -102,11 +103,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.txtDescripcion.Location = new System.Drawing.Point(19, 297);
+            this.txtDescripcion.Location = new System.Drawing.Point(19, 294);
             this.txtDescripcion.MaxLength = 500;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(572, 158);
+            this.txtDescripcion.Size = new System.Drawing.Size(578, 166);
             this.txtDescripcion.TabIndex = 22;
             // 
             // txtPrecioVenta
@@ -114,10 +115,10 @@
             this.txtPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrecioVenta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.txtPrecioVenta.Location = new System.Drawing.Point(145, 131);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(145, 88);
             this.txtPrecioVenta.MaxLength = 13;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(114, 32);
+            this.txtPrecioVenta.Size = new System.Drawing.Size(118, 32);
             this.txtPrecioVenta.TabIndex = 17;
             // 
             // txtNombre
@@ -125,10 +126,10 @@
             this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.txtNombre.Location = new System.Drawing.Point(144, 89);
+            this.txtNombre.Location = new System.Drawing.Point(144, 46);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(441, 32);
+            this.txtNombre.Size = new System.Drawing.Size(453, 32);
             this.txtNombre.TabIndex = 15;
             // 
             // txtCodigo
@@ -136,17 +137,17 @@
             this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.txtCodigo.Location = new System.Drawing.Point(144, 47);
+            this.txtCodigo.Location = new System.Drawing.Point(144, 4);
             this.txtCodigo.MaxLength = 20;
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(441, 32);
+            this.txtCodigo.Size = new System.Drawing.Size(453, 32);
             this.txtCodigo.TabIndex = 13;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblDescripcion.Location = new System.Drawing.Point(14, 264);
+            this.lblDescripcion.Location = new System.Drawing.Point(14, 266);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(116, 25);
             this.lblDescripcion.TabIndex = 20;
@@ -156,7 +157,7 @@
             // 
             this.lblPrecioVenta.AutoSize = true;
             this.lblPrecioVenta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblPrecioVenta.Location = new System.Drawing.Point(14, 133);
+            this.lblPrecioVenta.Location = new System.Drawing.Point(14, 90);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
             this.lblPrecioVenta.Size = new System.Drawing.Size(124, 25);
             this.lblPrecioVenta.TabIndex = 18;
@@ -166,7 +167,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.Location = new System.Drawing.Point(14, 93);
+            this.lblNombre.Location = new System.Drawing.Point(14, 49);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(86, 25);
             this.lblNombre.TabIndex = 16;
@@ -176,28 +177,37 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblCodigo.Location = new System.Drawing.Point(14, 49);
+            this.lblCodigo.Location = new System.Drawing.Point(14, 6);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(77, 25);
             this.lblCodigo.TabIndex = 14;
             this.lblCodigo.Text = "Codigo";
             // 
-            // lblTitulo
+            // lblImagen
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(227, 2);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(150, 40);
-            this.lblTitulo.TabIndex = 12;
-            this.lblTitulo.Text = "Modificar";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblImagen.Location = new System.Drawing.Point(14, 223);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(79, 25);
+            this.lblImagen.TabIndex = 26;
+            this.lblImagen.Text = "Imagen";
+            // 
+            // txtImagen
+            // 
+            this.txtImagen.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtImagen.Location = new System.Drawing.Point(144, 221);
+            this.txtImagen.Name = "txtImagen";
+            this.txtImagen.Size = new System.Drawing.Size(453, 32);
+            this.txtImagen.TabIndex = 27;
             // 
             // frmModificarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 510);
+            this.ClientSize = new System.Drawing.Size(609, 516);
+            this.Controls.Add(this.txtImagen);
+            this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.lblCategoria);
@@ -211,7 +221,6 @@
             this.Controls.Add(this.lblPrecioVenta);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.lblTitulo);
             this.Name = "frmModificarProductos";
             this.Text = "Modificar";
             this.ResumeLayout(false);
@@ -234,6 +243,7 @@
         private System.Windows.Forms.Label lblPrecioVenta;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblImagen;
+        private System.Windows.Forms.TextBox txtImagen;
     }
 }

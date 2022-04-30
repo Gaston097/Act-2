@@ -54,5 +54,23 @@ namespace AppGrupal
             mp.cargarValores(dgvProductos);
             this.mostrarProductosTodos_Load();
         }
+
+        private void dgvProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            Producto s = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+            cargarImagen(s.imagen);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxImagen.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxImagen.Load("https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640");
+            }
+        }
     }
 }

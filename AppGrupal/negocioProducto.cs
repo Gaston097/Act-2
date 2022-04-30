@@ -43,7 +43,7 @@ namespace AppGrupal
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "UPDATE Articulos SET Codigo = '" + p.codigo + "', Nombre = '" + p.nombre + "', Descripcion = '" + p.descripcion + "', idMarca = " + idMarca + ", idCategoria = " + idCategoria + ", Precio = " + p.precio + "WHERE id = " + p.id;
+                comando.CommandText = "UPDATE Articulos SET Codigo = '" + p.codigo + "', Nombre = '" + p.nombre + "', Descripcion = '" + p.descripcion + "', idMarca = " + idMarca + ", idCategoria = " + idCategoria + ", Precio = " + p.precio + ", ImagenUrl = '" + p.imagen + "' WHERE id = " + p.id;
                 comando.Connection = conex.conexionDB;
 
                 conex.abrirConexion();

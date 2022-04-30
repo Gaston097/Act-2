@@ -27,6 +27,7 @@ namespace AppGrupal
             txtNombre.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
             txtDescripcion.Text = dgvProductos.CurrentRow.Cells[3].Value.ToString();
             txtPrecioVenta.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
+            txtImagen.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
             np.obtenerMarcas(cbMarca);
             np.obtenerCategorias(cbCategoria);
             this.ShowDialog();
@@ -83,6 +84,14 @@ namespace AppGrupal
                 else
                     txtDescripcion.BackColor = Color.White;
 
+                if (String.IsNullOrEmpty(txtImagen.Text))
+                {
+                    txtImagen.BackColor = Color.Red;
+                    validar = true;
+                }
+                else
+                    txtImagen.BackColor = Color.White;
+
                 if (String.IsNullOrEmpty(cbMarca.SelectedValue.ToString()))
                 {
                     validar = true;
@@ -99,11 +108,13 @@ namespace AppGrupal
                     txtNombre.BackColor = Color.White;
                     txtPrecioVenta.BackColor = Color.White;
                     txtDescripcion.BackColor = Color.White;
+                    txtImagen.BackColor= Color.White;
 
                     p.codigo = txtCodigo.Text;
                     p.nombre = txtNombre.Text;
-                    p.descripcion = txtNombre.Text;
+                    p.descripcion = txtDescripcion.Text;
                     p.precio = Convert.ToDecimal(txtPrecioVenta.Text);
+                    p.imagen = txtImagen.Text;
                     p.id = id;
 
                     if (MessageBox.Show("Quieres modificar este articulo?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
