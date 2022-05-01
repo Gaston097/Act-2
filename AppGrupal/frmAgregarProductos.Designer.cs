@@ -129,14 +129,14 @@
             this.txtDescripcion.MaxLength = 500;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(573, 157);
+            this.txtDescripcion.Size = new System.Drawing.Size(573, 168);
             this.txtDescripcion.TabIndex = 7;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(484, 456);
+            this.btnAgregar.Location = new System.Drawing.Point(484, 467);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(106, 40);
             this.btnAgregar.TabIndex = 9;
@@ -206,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 506);
+            this.ClientSize = new System.Drawing.Size(603, 517);
             this.Controls.Add(this.txtImagen);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.cbCategoria);

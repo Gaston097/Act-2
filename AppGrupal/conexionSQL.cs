@@ -15,9 +15,17 @@ namespace AppGrupal
         private SqlDataReader lector;
         public conexionSQL()
         {
-            comando = new SqlCommand();
-            conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true;"); //Lucas
-            //conexion = new SqlConnection("Data Source=DESKTOP-MHSQT5A\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;"); //Gaston
+            try
+            {
+                comando = new SqlCommand();
+               // conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true;"); //Lucas
+                conexion = new SqlConnection("Data Source=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;"); //Gaston
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+           
         }
         public void setearConsulta(string consulta)
         {
