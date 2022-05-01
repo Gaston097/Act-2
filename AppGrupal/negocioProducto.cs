@@ -26,15 +26,16 @@ namespace AppGrupal
                 conexion.setearParametro("@Precio", p.precio);
                 conexion.setearParametro("@ImagenUrl", p.imagen);
                 conexion.ejecutarQuery();
-                conexion.cerrarConexion();
-
                 return true;
             }
             catch (Exception ex)
             {
-                conexion.cerrarConexion();
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
             }
         }
         public bool modificarProducto(Producto p, int idMarca, int idCategoria)
@@ -52,14 +53,16 @@ namespace AppGrupal
                 conexion.setearParametro("@ImagenUrl",p.imagen);
                 conexion.setearParametro("@Id",p.id);
                 conexion.ejecutarQuery();
-                conexion.cerrarConexion();
                 return true;
             }
             catch (Exception ex)
-            {
-                conexion.cerrarConexion();
+            {          
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
             }
         }
         public bool eliminarProducto(int idProducto)
@@ -69,15 +72,17 @@ namespace AppGrupal
             {
                 conexion.setearConsulta("UPDATE Articulos SET Estado = 0 WHERE id = " + idProducto);
                 conexion.ejecutarQuery();
-                conexion.cerrarConexion();
 
                 return true;
             }
             catch (Exception ex)
             {
-                conexion.cerrarConexion();
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
             }
         }
     }
