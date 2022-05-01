@@ -19,40 +19,66 @@ namespace AppGrupal
         }
         public void mostrarProductosTodos_Load()
         {
-            listasProductos p = new listasProductos();
+            try
+            {
+                listasProductos p = new listasProductos();
 
-            dgvProductos.AllowUserToAddRows = false;
+                dgvProductos.AllowUserToAddRows = false;
 
-            dgvProductos.Columns.Clear();
+                dgvProductos.Columns.Clear();
 
-            dgvProductos.DataSource = p.listar();
+                dgvProductos.DataSource = p.listar();
 
-            this.dgvProductos.Columns["id"].Visible = false;
-            this.dgvProductos.Columns["imagen"].Visible = false; 
+                this.dgvProductos.Columns["id"].Visible = false;
+                this.dgvProductos.Columns["imagen"].Visible = false;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            negocioProducto np = new negocioProducto();
-            frmProductosTodos p = new frmProductosTodos();
-
-            int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString());
-
-            if (MessageBox.Show("Quieres eliminar este articulo?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
+            try
             {
-                if (np.eliminarProducto(id))
+                negocioProducto np = new negocioProducto();
+                frmProductosTodos p = new frmProductosTodos();
+
+                int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value.ToString());
+
+                if (MessageBox.Show("Quieres eliminar este articulo?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
                 {
-                    MessageBox.Show("Articulo eliminado con exito");
-                    this.mostrarProductosTodos_Load();
+                    if (np.eliminarProducto(id))
+                    {
+                        MessageBox.Show("Articulo eliminado con exito");
+                        this.mostrarProductosTodos_Load();
+                    }
+                    else
+                        MessageBox.Show("El articulo no se pudo eliminar");
                 }
-                else
-                    MessageBox.Show("El articulo no se pudo eliminar");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmModificarProductos mp = new frmModificarProductos();
-            mp.cargarValores(dgvProductos);
-            this.mostrarProductosTodos_Load();
+            try
+            {
+                Producto p;
+                p = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+
+                frmModificarProductos mp = new frmModificarProductos();
+                mp.cargarValores(p);
+
+                this.mostrarProductosTodos_Load();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
@@ -60,7 +86,6 @@ namespace AppGrupal
             Producto s = (Producto)dgvProductos.CurrentRow.DataBoundItem;
             cargarImagen(s.imagen);
         }
-
         private void cargarImagen(string imagen)
         {
             try

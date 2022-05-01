@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexionSQL.cs" />
+    <Compile Include="Elemento.cs" />
     <Compile Include="frmAgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>

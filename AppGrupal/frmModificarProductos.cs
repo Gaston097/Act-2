@@ -12,25 +12,38 @@ namespace AppGrupal
 {
     public partial class frmModificarProductos : Form
     {
-        private int id;
-
+        private int idModificar;
         public frmModificarProductos()
         {
             InitializeComponent();
         }
-        public void cargarValores(DataGridView dgvProductos)
+        public void cargarValores(Producto p)
         {
-            negocioProducto np = new negocioProducto();
+            listasProductos lp = new listasProductos();
+            try
+            {
+                cbMarca.DataSource = lp.listarMarcas();
+                cbMarca.ValueMember = "id";
+                cbMarca.DisplayMember = "descripcion";
+                cbCategoria.DataSource = lp.listarCategorias();
+                cbCategoria.ValueMember = "id";
+                cbCategoria.DisplayMember = "descripcion";
 
-            id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
-            txtCodigo.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
-            txtNombre.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
-            txtDescripcion.Text = dgvProductos.CurrentRow.Cells[3].Value.ToString();
-            txtPrecioVenta.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
-            txtImagen.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
-            np.obtenerMarcas(cbMarca);
-            np.obtenerCategorias(cbCategoria);
-            this.ShowDialog();
+                idModificar = Convert.ToInt32(p.id);
+                txtCodigo.Text = p.codigo.ToString();
+                txtNombre.Text = p.nombre.ToString();
+                txtDescripcion.Text = p.descripcion.ToString();
+                txtPrecioVenta.Text = p.precio.ToString();
+                txtImagen.Text = p.imagen.ToString();
+                cbMarca.SelectedValue = p.marca.id;
+                cbCategoria.SelectedValue = p.categoria.id;
+
+                this.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -92,16 +105,6 @@ namespace AppGrupal
                 else
                     txtImagen.BackColor = Color.White;
 
-                if (String.IsNullOrEmpty(cbMarca.SelectedValue.ToString()))
-                {
-                    validar = true;
-                }
-
-                if (String.IsNullOrEmpty(cbCategoria.SelectedValue.ToString()))
-                {
-                    validar = true;
-                }
-
                 if (validar==false)
                 {
                     txtCodigo.BackColor = Color.White;
@@ -115,7 +118,7 @@ namespace AppGrupal
                     p.descripcion = txtDescripcion.Text;
                     p.precio = Convert.ToDecimal(txtPrecioVenta.Text);
                     p.imagen = txtImagen.Text;
-                    p.id = id;
+                    p.id = idModificar;
 
                     if (MessageBox.Show("Quieres modificar este articulo?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
                     {

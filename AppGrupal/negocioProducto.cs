@@ -86,50 +86,5 @@ namespace AppGrupal
                 return false;
             }
         }
-        public DataTable obtenerMarcas(ComboBox cbMarca)
-        {
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
-            DataTable dt = new DataTable(); 
-            {
-                conex.abrirConexion();
-
-                string consulta = "SELECT id, descripcion FROM Marcas WHERE Estado = 1";
-                SqlCommand cmd = new SqlCommand(consulta, conex.conexionDB);
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-            }
-
-            cbMarca.ValueMember = "id";
-            cbMarca.DisplayMember = "descripcion";
-            cbMarca.DataSource = dt;
-            cbMarca.SelectedIndex = -1;
-
-            return dt;
-        }
-        public DataTable obtenerCategorias(ComboBox cbCategoria)
-        {
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
-            DataTable dt = new DataTable();
-            {
-                conex.abrirConexion();
-
-                string consulta = "SELECT id, descripcion FROM Categorias WHERE Estado = 1";
-                SqlCommand cmd = new SqlCommand(consulta, conex.conexionDB);
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-            }
-
-            cbCategoria.ValueMember = "id";
-            cbCategoria.DisplayMember = "descripcion";
-            cbCategoria.DataSource = dt;
-            cbCategoria.SelectedIndex = -1;
-
-            return dt;
-        }
-
     }
 }

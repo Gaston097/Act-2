@@ -14,10 +14,11 @@ namespace AppGrupal
     {
         public frmAgregarProductos()
         {
-            negocioProducto np = new negocioProducto();
+            listasProductos lp = new listasProductos();
             InitializeComponent();
-            np.obtenerMarcas(cbMarca);
-            np.obtenerCategorias(cbCategoria);
+            
+            cbMarca.DataSource = lp.listarMarcas();
+            cbCategoria.DataSource = lp.listarCategorias();
         }
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
