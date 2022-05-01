@@ -43,13 +43,17 @@ namespace AppGrupal
 
                     lista.Add(p);
                 }
-                conexion.cerrarConexion();
+               
                 return lista;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return lista;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
             }
         }
         public List<Elemento> listarMarcas()

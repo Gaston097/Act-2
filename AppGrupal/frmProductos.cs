@@ -44,5 +44,10 @@ namespace AppGrupal
             //ventana.MdiParent = this;
             ventana.ShowDialog();
         }
+
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
