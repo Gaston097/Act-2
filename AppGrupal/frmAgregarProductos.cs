@@ -16,9 +16,12 @@ namespace AppGrupal
         {
             listasProductos lp = new listasProductos();
             InitializeComponent();
-            
             cbMarca.DataSource = lp.listarMarcas();
+            cbMarca.ValueMember = "id";
+            cbMarca.DisplayMember = "descripcion";
             cbCategoria.DataSource = lp.listarCategorias();
+            cbCategoria.ValueMember = "id";
+            cbCategoria.DisplayMember = "descripcion";
         }
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -102,8 +105,10 @@ namespace AppGrupal
                 p.descripcion = txtDescripcion.Text;
                 p.precio = Convert.ToDecimal(txtPrecioVenta.Text);
                 p.imagen = txtImagen.Text;
+                int idMarca = Convert.ToInt32(cbMarca.SelectedValue);
+                int idCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
 
-                if (np.agregarProducto(p, Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbCategoria.SelectedValue)))
+                if (np.agregarProducto(p,idMarca,idCategoria))
                 {
                     MessageBox.Show("Producto agregado con exito");  
                     this.Close();

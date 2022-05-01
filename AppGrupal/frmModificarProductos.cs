@@ -119,10 +119,12 @@ namespace AppGrupal
                     p.precio = Convert.ToDecimal(txtPrecioVenta.Text);
                     p.imagen = txtImagen.Text;
                     p.id = idModificar;
+                    int idMarca = Convert.ToInt32(cbMarca.SelectedValue);
+                    int idCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
 
                     if (MessageBox.Show("Quieres modificar este articulo?", "Message", MessageBoxButtons.YesNo)==DialogResult.Yes)
                     {
-                        if (np.modificarProducto(p, Convert.ToInt32(cbMarca.SelectedValue), Convert.ToInt32(cbCategoria.SelectedValue)))
+                        if (np.modificarProducto(p,idMarca,idCategoria))
                         {
                             this.Close();
                             MessageBox.Show("Articulo modificado con exito");

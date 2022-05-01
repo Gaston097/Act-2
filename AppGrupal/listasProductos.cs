@@ -14,43 +14,36 @@ namespace AppGrupal
         public List<Producto> listar()
         {
             List<Producto> lista = new List<Producto>();
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
-
+            conexionSQL conexion = new conexionSQL();
             try
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.id id, A.codigo codigo, A.nombre nombre, A.descripcion descripcion, A.precio precio, M.Descripcion marca, A.idMarca, C.Descripcion categoria, A.idCategoria, A.ImagenUrl imagen FROM Articulos A INNER JOIN Marcas M on M.id = A.idMarca INNER JOIN Categorias C on C.id = A.IdCategoria  WHERE A.Estado = 1";
-                comando.Connection = conex.conexionDB;
+                conexion.setearConsulta("SELECT A.id id, A.codigo codigo, A.nombre nombre, A.descripcion descripcion, A.precio precio, M.Descripcion marca, A.idMarca, C.Descripcion categoria, A.idCategoria, A.ImagenUrl imagen FROM Articulos A INNER JOIN Marcas M on M.id = A.idMarca INNER JOIN Categorias C on C.id = A.IdCategoria  WHERE A.Estado = 1");
+                conexion.ejecutarQuery();
 
-                conex.abrirConexion();
-
-                SqlDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (conexion.Lector.Read())
                 {
                     Producto p = new Producto();
 
-                    p.id = (int)lector["id"];
-                    p.codigo = (string)lector["codigo"];
-                    p.nombre = (string)lector["nombre"];
-                    p.descripcion = (string)lector["descripcion"];
-                    p.precio = (decimal)lector["precio"];
+                    p.id = (int)conexion.Lector["id"];
+                    p.codigo = (string)conexion.Lector["codigo"];
+                    p.nombre = (string)conexion.Lector["nombre"];
+                    p.descripcion = (string)conexion.Lector["descripcion"];
+                    p.precio = (decimal)conexion.Lector["precio"];
 
-                    if (!(lector["imagen"] is DBNull))
-                        p.imagen = (string)lector["imagen"];
+                    if (!(conexion.Lector["imagen"] is DBNull))
+                        p.imagen = (string)conexion.Lector["imagen"];
 
                     p.marca = new Elemento();
-                    p.marca.descripcion = (string)lector["marca"];
-                    p.marca.id = (int)lector["idMarca"];
+                    p.marca.descripcion = (string)conexion.Lector["marca"];
+                    p.marca.id = (int)conexion.Lector["idMarca"];
 
                     p.categoria = new Elemento();
-                    p.categoria.descripcion = (string)lector["categoria"];
-                    p.categoria.id = (int)lector["idCategoria"];
+                    p.categoria.descripcion = (string)conexion.Lector["categoria"];
+                    p.categoria.id = (int)conexion.Lector["idCategoria"];
 
                     lista.Add(p);
                 }
-                conex.cerrarConexion();
+                conexion.cerrarConexion();
                 return lista;
             }
             catch (Exception ex)
@@ -62,29 +55,22 @@ namespace AppGrupal
         public List<Elemento> listarMarcas()
         {
             List<Elemento> lista = new List<Elemento>();
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
-
+            conexionSQL conexion = new conexionSQL();
             try
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT id, descripcion FROM Marcas WHERE Estado = 1";
-                comando.Connection = conex.conexionDB;
-
-                conex.abrirConexion();
-
-                SqlDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                conexion.setearConsulta("SELECT id, descripcion FROM Marcas WHERE Estado = 1");
+                conexion.ejecutarQuery();
+  
+                while (conexion.Lector.Read())
                 {
                     Elemento e = new Elemento();
 
-                    e.id = (int)lector["id"];
-                    e.descripcion = (string)lector["descripcion"];
+                    e.id = (int)conexion.Lector["id"];
+                    e.descripcion = (string)conexion.Lector["descripcion"];
 
                     lista.Add(e);
                 }
-                conex.cerrarConexion();
+                conexion.cerrarConexion();
                 return lista;
             }
             catch (Exception ex)
@@ -96,29 +82,22 @@ namespace AppGrupal
         public List<Elemento> listarCategorias()
         {
             List<Elemento> lista = new List<Elemento>();
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
-
+            conexionSQL conexion = new conexionSQL();
             try
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT id, descripcion FROM Categorias WHERE Estado = 1";
-                comando.Connection = conex.conexionDB;
+                conexion.setearConsulta("SELECT id, descripcion FROM Categorias WHERE Estado = 1");
+                conexion.ejecutarQuery();
 
-                conex.abrirConexion();
-
-                SqlDataReader lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (conexion.Lector.Read())
                 {
                     Elemento e = new Elemento();
 
-                    e.id = (int)lector["id"];
-                    e.descripcion = (string)lector["descripcion"];
+                    e.id = (int)conexion.Lector["id"];
+                    e.descripcion = (string)conexion.Lector["descripcion"];
 
                     lista.Add(e);
                 }
-                conex.cerrarConexion();
+                conexion.cerrarConexion();
                 return lista;
             }
             catch (Exception ex)

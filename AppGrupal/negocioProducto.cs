@@ -11,77 +11,71 @@ namespace AppGrupal
 {
     class negocioProducto
     {
-        public bool agregarProducto(Producto p, int idMarca, int idCategoria)
+        public bool agregarProducto(Producto p,int idMarca, int idCategoria)
         {
-            conexionSQL conex = new conexionSQL();
+            conexionSQL conexion = new conexionSQL();
             SqlCommand comando = new SqlCommand();
             try
-            {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "INSERT INTO Articulos VALUES ('" + p.codigo + "', '" + p.nombre + "', '" + p.descripcion + "', " + idMarca + ", " + idCategoria + ", '" + p.imagen + "', " + p.precio + ", 1)";
-                comando.Connection = conex.conexionDB;
-
-                conex.abrirConexion();
-
-                SqlDataReader lector = comando.ExecuteReader();
-
-                conex.cerrarConexion();
+            {     
+                conexion.setearConsulta("INSERT INTO Articulos VALUES (@Codigo, @Nombre, @Descripcion, @idMarca, @idCategoria, @ImagenUrl, @Precio, 1)");
+                conexion.setearParametro("@Codigo", p.codigo);
+                conexion.setearParametro("@Nombre", p.nombre);
+                conexion.setearParametro("@Descripcion", p.descripcion);
+                conexion.setearParametro("@IdMarca", idMarca);
+                conexion.setearParametro("@idCategoria", idCategoria);
+                conexion.setearParametro("@Precio", p.precio);
+                conexion.setearParametro("@ImagenUrl", p.imagen);
+                conexion.ejecutarQuery();
+                conexion.cerrarConexion();
 
                 return true;
             }
             catch (Exception ex)
             {
-                conex.cerrarConexion();
+                conexion.cerrarConexion();
                 MessageBox.Show(ex.Message);
                 return false;
             }
         }
         public bool modificarProducto(Producto p, int idMarca, int idCategoria)
         {
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
+            conexionSQL conexion = new conexionSQL();
             try
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "UPDATE Articulos SET Codigo = '" + p.codigo + "', Nombre = '" + p.nombre + "', Descripcion = '" + p.descripcion + "', idMarca = " + idMarca + ", idCategoria = " + idCategoria + ", Precio = " + p.precio + ", ImagenUrl = '" + p.imagen + "' WHERE id = " + p.id;
-                comando.Connection = conex.conexionDB;
-
-                conex.abrirConexion();
-
-                SqlDataReader lector = comando.ExecuteReader();
-
-                conex.cerrarConexion();
-
+                conexion.setearConsulta("UPDATE Articulos SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, idMarca = @IdMarca, idCategoria = @IdCategoria, Precio = @Precio, ImagenUrl = @ImagenUrl WHERE id = @Id");
+                conexion.setearParametro("@Codigo", p.codigo);
+                conexion.setearParametro("@Nombre",p.nombre);
+                conexion.setearParametro("@Descripcion",p.descripcion);
+                conexion.setearParametro("@IdMarca",idMarca);
+                conexion.setearParametro("@idCategoria",idCategoria);
+                conexion.setearParametro("@Precio",p.precio);
+                conexion.setearParametro("@ImagenUrl",p.imagen);
+                conexion.setearParametro("@Id",p.id);
+                conexion.ejecutarQuery();
+                conexion.cerrarConexion();
                 return true;
             }
             catch (Exception ex)
             {
-                conex.cerrarConexion();
+                conexion.cerrarConexion();
                 MessageBox.Show(ex.Message);
                 return false;
             }
         }
         public bool eliminarProducto(int idProducto)
         {
-            conexionSQL conex = new conexionSQL();
-            SqlCommand comando = new SqlCommand();
+            conexionSQL conexion = new conexionSQL();
             try
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "UPDATE Articulos SET Estado = 0 WHERE id = " + idProducto;
-                comando.Connection = conex.conexionDB;
-
-                conex.abrirConexion();
-
-                SqlDataReader lector = comando.ExecuteReader();
-
-                conex.cerrarConexion();
+                conexion.setearConsulta("UPDATE Articulos SET Estado = 0 WHERE id = " + idProducto);
+                conexion.ejecutarQuery();
+                conexion.cerrarConexion();
 
                 return true;
             }
             catch (Exception ex)
             {
-                conex.cerrarConexion();
+                conexion.cerrarConexion();
                 MessageBox.Show(ex.Message);
                 return false;
             }

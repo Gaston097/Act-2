@@ -8,39 +8,46 @@ using System.Windows.Forms;
 
 namespace AppGrupal
 {
-    class conexionSQL
+    public class conexionSQL
     {
-        public SqlConnection conexionDB = new SqlConnection();
-        public SqlCommand comando = new SqlCommand();
-        //public string cadenaConexion = "Data Source=DESKTOP-MHSQT5A\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;";
-        public string cadenaConexion = "server=localhost; database=CATALOGO_DB; integrated security=true;";
-
-        public SqlConnection abrirConexion()
+        private SqlConnection conexion;
+        private SqlCommand comando;
+        private SqlDataReader lector;
+        public conexionSQL()
         {
-            try
-            {
-                conexionDB.ConnectionString = cadenaConexion;
-                conexionDB.Open();
-                //MessageBox.Show("Se establecio conexion con la DB");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo establecer conexion con la DB" + ex.Message);
-            }
-            return conexionDB;
+            comando = new SqlCommand();
+            conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true;"); //Lucas
+            //conexion = new SqlConnection("Data Source=DESKTOP-MHSQT5A\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;"); //Gaston
         }
+        public void setearConsulta(string consulta)
+        {
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
+        }
+
         public void cerrarConexion()
         {
+            if (lector != null)
+                lector.Close();
+            conexion.Close();
+        }
+        public void ejecutarQuery()
+        {
+            comando.Connection = conexion;
             try
             {
-                conexionDB.Close();
-                //MessageBox.Show("Se cerro la conexion con la DB");
+                conexion.Open();
+                lector = comando.ExecuteReader();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo cerrar la conexion con la DB: " + ex.Message);
+                throw ex;
             }
         }
-        public string stringConexion() { return cadenaConexion; }
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+        public SqlDataReader Lector { get { return lector; } }
     }
 }
