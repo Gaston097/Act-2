@@ -43,7 +43,7 @@ namespace AppGrupal
 
                     lista.Add(p);
                 }
-               
+
                 return lista;
             }
             catch (Exception ex)
@@ -64,7 +64,7 @@ namespace AppGrupal
             {
                 conexion.setearConsulta("SELECT id, descripcion FROM Marcas WHERE Estado = 1");
                 conexion.ejecutarQuery();
-  
+
                 while (conexion.Lector.Read())
                 {
                     Elemento e = new Elemento();
@@ -74,13 +74,16 @@ namespace AppGrupal
 
                     lista.Add(e);
                 }
-                conexion.cerrarConexion();
                 return lista;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return lista;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
             }
         }
         public List<Elemento> listarCategorias()
@@ -95,19 +98,20 @@ namespace AppGrupal
                 while (conexion.Lector.Read())
                 {
                     Elemento e = new Elemento();
-
                     e.id = (int)conexion.Lector["id"];
                     e.descripcion = (string)conexion.Lector["descripcion"];
-
                     lista.Add(e);
                 }
-                conexion.cerrarConexion();
                 return lista;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return lista;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
             }
         }
     }
