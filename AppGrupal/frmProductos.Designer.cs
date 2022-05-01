@@ -34,6 +34,7 @@
             this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todosLosProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosXFiltroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.codigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +46,10 @@
             this.listasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1086, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(917, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // productosToolStripMenuItem
             // 
@@ -84,21 +86,31 @@
             // 
             // productosXFiltroToolStripMenuItem
             // 
+            this.productosXFiltroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.codigoToolStripMenuItem});
             this.productosXFiltroToolStripMenuItem.Name = "productosXFiltroToolStripMenuItem";
             this.productosXFiltroToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.productosXFiltroToolStripMenuItem.Text = "Productos X Filtro";
+            this.productosXFiltroToolStripMenuItem.Click += new System.EventHandler(this.productosXFiltroToolStripMenuItem_Click);
+            // 
+            // codigoToolStripMenuItem
+            // 
+            this.codigoToolStripMenuItem.Name = "codigoToolStripMenuItem";
+            this.codigoToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.codigoToolStripMenuItem.Text = "Codigo";
+            this.codigoToolStripMenuItem.Click += new System.EventHandler(this.codigoToolStripMenuItem_Click);
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 529);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(917, 574);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Productos";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmProductos_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -115,6 +127,7 @@
         private System.Windows.Forms.ToolStripMenuItem listasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosXFiltroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem todosLosProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem codigoToolStripMenuItem;
     }
 }
 

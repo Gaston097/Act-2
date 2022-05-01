@@ -135,5 +135,10 @@ namespace AppGrupal
                 }
             }
         }
+
+        private void frmModificarProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

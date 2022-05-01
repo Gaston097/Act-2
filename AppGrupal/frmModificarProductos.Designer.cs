@@ -223,6 +223,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "frmModificarProductos";
             this.Text = "Modificar";
+            this.Load += new System.EventHandler(this.frmModificarProductos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
