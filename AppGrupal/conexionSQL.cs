@@ -18,8 +18,8 @@ namespace AppGrupal
             try
             {
                 comando = new SqlCommand();
-               // conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true;"); //Lucas
-                conexion = new SqlConnection("Data Source=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;"); //Gaston
+                conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true;"); //Lucas
+                //conexion = new SqlConnection("Data Source=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;"); //Gaston
             }
             catch (Exception ex)
             {

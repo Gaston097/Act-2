@@ -97,5 +97,23 @@ namespace AppGrupal
                 pbxImagen.Load("https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640");
             }
         }
+
+        private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Producto p;
+                p = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+
+                frmDetalleProducto dp = new frmDetalleProducto();
+                dp.cargarValores(p);
+
+                this.mostrarProductosTodos_Load();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
