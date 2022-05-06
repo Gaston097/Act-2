@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppGrupal", "AppGrupal\AppGrupal.csproj", "{81FE03A2-3AB1-44E9-9D2F-69F1FF0ED712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{38822C71-F06D-4D9E-9A86-7429F042A347}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominios", "dominios\dominios.csproj", "{870C1965-D380-4307-B010-71E3B2E72C98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocios", "negocios\negocios.csproj", "{BFBA350E-39A0-4ECA-A95F-4CE8870C6481}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{81FE03A2-3AB1-44E9-9D2F-69F1FF0ED712}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81FE03A2-3AB1-44E9-9D2F-69F1FF0ED712}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81FE03A2-3AB1-44E9-9D2F-69F1FF0ED712}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38822C71-F06D-4D9E-9A86-7429F042A347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38822C71-F06D-4D9E-9A86-7429F042A347}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38822C71-F06D-4D9E-9A86-7429F042A347}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38822C71-F06D-4D9E-9A86-7429F042A347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{870C1965-D380-4307-B010-71E3B2E72C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{870C1965-D380-4307-B010-71E3B2E72C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{870C1965-D380-4307-B010-71E3B2E72C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{870C1965-D380-4307-B010-71E3B2E72C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBA350E-39A0-4ECA-A95F-4CE8870C6481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBA350E-39A0-4ECA-A95F-4CE8870C6481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBA350E-39A0-4ECA-A95F-4CE8870C6481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBA350E-39A0-4ECA-A95F-4CE8870C6481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

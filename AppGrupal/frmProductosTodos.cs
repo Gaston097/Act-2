@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using dominios;
+using negocios;
 namespace AppGrupal
 {
     public partial class frmProductosTodos : Form

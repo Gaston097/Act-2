@@ -226,6 +226,7 @@
             this.MinimumSize = new System.Drawing.Size(619, 420);
             this.Name = "frmAgregarProductos";
             this.Text = "Agregar";
+            this.Load += new System.EventHandler(this.frmAgregarProductos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
