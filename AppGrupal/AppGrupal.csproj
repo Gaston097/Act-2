@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="conexionSQL.cs" />
     <Compile Include="frmAgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,8 +77,6 @@
       <DependentUpon>frmProductosTodos.cs</DependentUpon>
     </Compile>
     <Compile Include="listasProductos.cs" />
-    <Compile Include="negocioProducto.cs" />
-    <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAgregarProductos.resx">
@@ -123,6 +120,10 @@
     <ProjectReference Include="..\dominios\dominios.csproj">
       <Project>{870c1965-d380-4307-b010-71e3b2e72c98}</Project>
       <Name>dominios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocios\negocios.csproj">
+      <Project>{bfba350e-39a0-4eca-a95f-4ce8870c6481}</Project>
+      <Name>negocios</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

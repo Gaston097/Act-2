@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using dominios;
 
-namespace AppGrupal
+namespace negocios
+
 {
     public class conexionSQL
     {
@@ -18,9 +19,8 @@ namespace AppGrupal
         {
             try
             {
-                comando = new SqlCommand();
-               // conexion = new SqlConnection("server=localhost; database=CATALOGO_DB; integrated security=true;"); //Lucas
-                conexion = new SqlConnection("Data Source=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;"); //Gaston
+                comando = new SqlCommand();        
+                conexion = new SqlConnection("Data Source=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true;"); 
             }
             catch (Exception ex)
             {

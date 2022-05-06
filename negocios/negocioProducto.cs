@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Data;
 using dominios;
 
-namespace AppGrupal
+namespace negocios
 {
-    class negocioProducto
+    public class negocioProducto
     {
         public bool agregarProducto(Producto p,int idMarca, int idCategoria)
         {
@@ -31,7 +31,7 @@ namespace AppGrupal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -58,7 +58,7 @@ namespace AppGrupal
             }
             catch (Exception ex)
             {          
-                MessageBox.Show(ex.Message);
+             //   messagebox.Show(ex.Message);
                 return false;
             }
             finally
@@ -78,7 +78,7 @@ namespace AppGrupal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
                 return false;
             }
             finally
