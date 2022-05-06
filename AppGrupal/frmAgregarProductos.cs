@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominios;
 
 namespace AppGrupal
 {
@@ -115,6 +116,11 @@ namespace AppGrupal
                 } 
                 else MessageBox.Show("El producto no se agrego");
             }
+        }
+
+        private void frmAgregarProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

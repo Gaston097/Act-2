@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexionSQL.cs" />
-    <Compile Include="Elemento.cs" />
     <Compile Include="frmAgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominios\dominios.csproj">
+      <Project>{870c1965-d380-4307-b010-71e3b2e72c98}</Project>
+      <Name>dominios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
