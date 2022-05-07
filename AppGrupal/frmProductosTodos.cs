@@ -20,6 +20,10 @@ namespace AppGrupal
         }
         public void mostrarProductosTodos_Load()
         {
+            cargar();
+        }
+        private void cargar()
+        {
             try
             {
                 listasProductos p = new listasProductos();
@@ -32,13 +36,17 @@ namespace AppGrupal
 
                 this.dgvProductos.Columns["id"].Visible = false;
                 this.dgvProductos.Columns["imagen"].Visible = false;
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+
+
+
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -115,6 +123,13 @@ namespace AppGrupal
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btmAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarProductos alta = new frmAgregarProductos();
+            alta.ShowDialog();
+            cargar();
         }
     }
 }
