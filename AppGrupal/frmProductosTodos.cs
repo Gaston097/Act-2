@@ -149,12 +149,17 @@ namespace AppGrupal
 
         private void btmFiltrar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
             List<Producto> listafiltrada;
             string filtro = txtFiltro.Text;
 
-            if(filtro != "")
+            if (filtro.Length > 2)
             {
-            listafiltrada = listproducto.FindAll(x => x.codigo == filtro.ToUpper() || x.nombre.ToUpper().Contains(filtro.ToUpper()) || x.marca.descripcion.ToUpper().Contains(filtro.ToUpper()) || x.categoria.descripcion.ToUpper().Contains(filtro.ToUpper()));
+                listafiltrada = listproducto.FindAll(x => x.codigo == filtro.ToUpper() || x.nombre.ToUpper().Contains(filtro.ToUpper()) || x.marca.descripcion.ToUpper().Contains(filtro.ToUpper()) || x.categoria.descripcion.ToUpper().Contains(filtro.ToUpper()));
 
             }
             else
@@ -166,5 +171,7 @@ namespace AppGrupal
             dgvProductos.DataSource = listafiltrada;
             ocultarColumnas();
         }
+
+       
     }
 }
