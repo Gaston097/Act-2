@@ -123,5 +123,22 @@ namespace AppGrupal
         {
 
         }
+
+        private void txtImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtImagen.Text);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxImagen.Load(imagen);
+            }
+            catch (Exception)
+            {
+                pbxImagen.Load("https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640");
+            }
+        }
     }
 }

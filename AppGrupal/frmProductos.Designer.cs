@@ -96,7 +96,7 @@
             // codigoToolStripMenuItem
             // 
             this.codigoToolStripMenuItem.Name = "codigoToolStripMenuItem";
-            this.codigoToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.codigoToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
             this.codigoToolStripMenuItem.Text = "Codigo";
             this.codigoToolStripMenuItem.Click += new System.EventHandler(this.codigoToolStripMenuItem_Click);
             // 
@@ -105,6 +105,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(917, 574);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

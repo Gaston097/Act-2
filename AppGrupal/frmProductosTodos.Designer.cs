@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.cmsProductos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +53,8 @@
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(647, 323);
             this.dgvProductos.TabIndex = 1;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateBlue;
+            this.BackColor = System.Drawing.Color.BlueViolet;
             this.ClientSize = new System.Drawing.Size(1025, 385);
             this.Controls.Add(this.btmAgregar);
             this.Controls.Add(this.pbxImagen);
