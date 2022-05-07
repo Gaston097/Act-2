@@ -89,7 +89,7 @@
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(480, 466);
+            this.btnModificar.Location = new System.Drawing.Point(500, 465);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(117, 40);
             this.btnModificar.TabIndex = 23;
@@ -107,7 +107,7 @@
             this.txtDescripcion.MaxLength = 500;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(578, 166);
+            this.txtDescripcion.Size = new System.Drawing.Size(598, 165);
             this.txtDescripcion.TabIndex = 22;
             // 
             // txtPrecioVenta
@@ -118,7 +118,7 @@
             this.txtPrecioVenta.Location = new System.Drawing.Point(145, 88);
             this.txtPrecioVenta.MaxLength = 13;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(118, 32);
+            this.txtPrecioVenta.Size = new System.Drawing.Size(138, 32);
             this.txtPrecioVenta.TabIndex = 17;
             // 
             // txtNombre
@@ -129,7 +129,7 @@
             this.txtNombre.Location = new System.Drawing.Point(144, 46);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(453, 32);
+            this.txtNombre.Size = new System.Drawing.Size(473, 32);
             this.txtNombre.TabIndex = 15;
             // 
             // txtCodigo
@@ -140,7 +140,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(144, 4);
             this.txtCodigo.MaxLength = 20;
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(453, 32);
+            this.txtCodigo.Size = new System.Drawing.Size(473, 32);
             this.txtCodigo.TabIndex = 13;
             // 
             // lblDescripcion
@@ -206,7 +206,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(609, 516);
+            this.ClientSize = new System.Drawing.Size(629, 515);
             this.Controls.Add(this.txtImagen);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.cbCategoria);

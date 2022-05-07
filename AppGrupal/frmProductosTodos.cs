@@ -13,6 +13,8 @@ namespace AppGrupal
 {
     public partial class frmProductosTodos : Form
     {
+        private List<Producto> listproducto;
+
         public frmProductosTodos()
         {
             InitializeComponent();
@@ -32,10 +34,10 @@ namespace AppGrupal
 
                 dgvProductos.Columns.Clear();
 
-                dgvProductos.DataSource = p.listar();
+                listproducto = p.listar();
+                dgvProductos.DataSource = listproducto;
 
-                this.dgvProductos.Columns["id"].Visible = false;
-                this.dgvProductos.Columns["imagen"].Visible = false;
+                ocultarColumnas();
 
             }
             catch (Exception ex)
@@ -44,7 +46,11 @@ namespace AppGrupal
             }
         }
 
-
+        private void ocultarColumnas()
+        {
+            this.dgvProductos.Columns["id"].Visible = false;
+            this.dgvProductos.Columns["imagen"].Visible = false;
+        }
 
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,8 +98,11 @@ namespace AppGrupal
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
+            if(dgvProductos.CurrentRow != null)
+            {
             Producto s = (Producto)dgvProductos.CurrentRow.DataBoundItem;
             cargarImagen(s.imagen);
+            }
         }
         private void cargarImagen(string imagen)
         {
@@ -111,6 +120,7 @@ namespace AppGrupal
         {
             try
             {
+                if(dgvProductos.CurrentRow != null) { 
                 Producto p;
                 p = (Producto)dgvProductos.CurrentRow.DataBoundItem;
 
@@ -118,6 +128,11 @@ namespace AppGrupal
                 dp.cargarValores(p);
 
                 this.mostrarProductosTodos_Load();
+            }
+                else
+                {
+                    MessageBox.Show("Seleccione la fila");
+                }
             }
             catch (Exception ex)
             {
@@ -130,6 +145,26 @@ namespace AppGrupal
             frmAgregarProductos alta = new frmAgregarProductos();
             alta.ShowDialog();
             cargar();
+        }
+
+        private void btmFiltrar_Click(object sender, EventArgs e)
+        {
+            List<Producto> listafiltrada;
+            string filtro = txtFiltro.Text;
+
+            if(filtro != "")
+            {
+            listafiltrada = listproducto.FindAll(x => x.codigo == filtro.ToUpper() || x.nombre.ToUpper().Contains(filtro.ToUpper()) || x.marca.descripcion.ToUpper().Contains(filtro.ToUpper()) || x.categoria.descripcion.ToUpper().Contains(filtro.ToUpper()));
+
+            }
+            else
+            {
+                listafiltrada = listproducto;
+            }
+
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = listafiltrada;
+            ocultarColumnas();
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.cmsProductos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +37,9 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.btmAgregar = new System.Windows.Forms.Button();
+            this.lvlFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btmFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.cmsProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -53,8 +56,8 @@
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(647, 323);
             this.dgvProductos.TabIndex = 1;
@@ -101,7 +104,7 @@
             // 
             // btmAgregar
             // 
-            this.btmAgregar.Location = new System.Drawing.Point(584, 341);
+            this.btmAgregar.Location = new System.Drawing.Point(584, 343);
             this.btmAgregar.Name = "btmAgregar";
             this.btmAgregar.Size = new System.Drawing.Size(75, 23);
             this.btmAgregar.TabIndex = 3;
@@ -109,12 +112,44 @@
             this.btmAgregar.UseVisualStyleBackColor = true;
             this.btmAgregar.Click += new System.EventHandler(this.btmAgregar_Click);
             // 
+            // lvlFiltro
+            // 
+            this.lvlFiltro.AutoSize = true;
+            this.lvlFiltro.BackColor = System.Drawing.Color.BlueViolet;
+            this.lvlFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvlFiltro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lvlFiltro.Location = new System.Drawing.Point(78, 341);
+            this.lvlFiltro.Name = "lvlFiltro";
+            this.lvlFiltro.Size = new System.Drawing.Size(61, 20);
+            this.lvlFiltro.TabIndex = 4;
+            this.lvlFiltro.Text = "Filtrar:";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(136, 343);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(151, 20);
+            this.txtFiltro.TabIndex = 5;
+            // 
+            // btmFiltrar
+            // 
+            this.btmFiltrar.Location = new System.Drawing.Point(293, 341);
+            this.btmFiltrar.Name = "btmFiltrar";
+            this.btmFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btmFiltrar.TabIndex = 6;
+            this.btmFiltrar.Text = "Filtrar";
+            this.btmFiltrar.UseVisualStyleBackColor = true;
+            this.btmFiltrar.Click += new System.EventHandler(this.btmFiltrar_Click);
+            // 
             // frmProductosTodos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlueViolet;
             this.ClientSize = new System.Drawing.Size(1025, 385);
+            this.Controls.Add(this.btmFiltrar);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lvlFiltro);
             this.Controls.Add(this.btmAgregar);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.dgvProductos);
@@ -128,6 +163,7 @@
             this.cmsProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         #endregion
@@ -138,5 +174,8 @@
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.ToolStripMenuItem verDetalleToolStripMenuItem;
         private System.Windows.Forms.Button btmAgregar;
+        private System.Windows.Forms.Label lvlFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btmFiltrar;
     }
 }
