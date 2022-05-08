@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-//using System.Windows.Forms;
 using dominios;
 
 namespace negocios

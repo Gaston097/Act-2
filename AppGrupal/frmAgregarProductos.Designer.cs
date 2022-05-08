@@ -237,9 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
         #endregion
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblNombre;

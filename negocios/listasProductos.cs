@@ -35,12 +35,12 @@ namespace AppGrupal
                         p.imagen = (string)conexion.Lector["imagen"];
 
                     p.marca = new Elemento();
-                    p.marca.descripcion = (string)conexion.Lector["marca"];
-                    p.marca.id = (int)conexion.Lector["idMarca"];
+                    p.marca.Descripcion = (string)conexion.Lector["marca"];
+                    p.marca.Id = (int)conexion.Lector["idMarca"];
 
                     p.categoria = new Elemento();
-                    p.categoria.descripcion = (string)conexion.Lector["categoria"];
-                    p.categoria.id = (int)conexion.Lector["idCategoria"];
+                    p.categoria.Descripcion = (string)conexion.Lector["categoria"];
+                    p.categoria.Id = (int)conexion.Lector["idCategoria"];
 
                     lista.Add(p);
                 }
@@ -70,8 +70,8 @@ namespace AppGrupal
                 {
                     Elemento e = new Elemento();
 
-                    e.id = (int)conexion.Lector["id"];
-                    e.descripcion = (string)conexion.Lector["descripcion"];
+                    e.Id = (int)conexion.Lector["id"];
+                    e.Descripcion = (string)conexion.Lector["descripcion"];
 
                     lista.Add(e);
                 }
