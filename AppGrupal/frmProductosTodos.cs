@@ -149,7 +149,20 @@ namespace AppGrupal
 
         private void btmFiltrar_Click(object sender, EventArgs e)
         {
-            
+            negocioProducto negocio = new negocioProducto();
+            try
+            {
+
+            string campo = cboCampo.SelectedItem.ToString();
+            string criterio = cboCriterio.SelectedItem.ToString();
+            string filtro = txtFiltroAvanzado.Text;
+                dgvProductos.DataSource = negocio.filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                
+            }
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -172,6 +185,53 @@ namespace AppGrupal
             ocultarColumnas();
         }
 
-       
+        private void frmProductosTodos_Load(object sender, EventArgs e)
+        {
+            cargar();
+            cboCampo.Items.Add("Código");
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripción");
+            cboCampo.Items.Add("Precio");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoria");
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            string opcion = cboCampo.SelectedItem.ToString();
+            if (opcion == "Código")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Igual a");
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboCampo_DropDownStyleChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
