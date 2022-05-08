@@ -96,6 +96,8 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificar.MouseLeave += new System.EventHandler(this.btnModificar_MouseLeave);
+            this.btnModificar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnModificar_MouseMove);
             // 
             // txtDescripcion
             // 

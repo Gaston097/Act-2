@@ -210,12 +210,47 @@ namespace AppGrupal
         {
             
             string opcion = cboCampo.SelectedItem.ToString();
-            if (opcion == "Código")
+            switch (opcion)
             {
-                cboCriterio.Items.Clear();
-                cboCriterio.Items.Add("Igual a");
-                cboCriterio.Items.Add("Comienza con");
-                cboCriterio.Items.Add("Termina con");
+                case "Código":
+                        cboCriterio.Items.Clear();
+                        cboCriterio.Items.Add("Igual a");
+                        cboCriterio.Items.Add("Comienza con");
+                        cboCriterio.Items.Add("Termina con");                  
+                    break;
+                case "Nombre":
+                    cboCriterio.Items.Clear();                   
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                    break;
+                case "Descripción":
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                    break;
+                case "Precio":
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Mayor a");
+                    cboCriterio.Items.Add("Menor a");
+                    cboCriterio.Items.Add("Igual a");
+                    break;
+                case "Marca":
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                    break;
+                case "Categoria":
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                    break;
+
+                default:
+                    break;
             }
         }
 
@@ -232,6 +267,26 @@ namespace AppGrupal
         private void cboCampo_DropDownStyleChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btmFiltrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btmFiltrar.BackColor = Color.Violet;
+        }
+
+        private void btmBuscar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btmBuscar.BackColor = Color.Violet;
+        }
+
+        private void btmBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            btmBuscar.BackColor= Color.LightGray;
+        }
+
+        private void btmFiltrar_MouseLeave(object sender, EventArgs e)
+        {
+            btmFiltrar.BackColor= Color.LightGray;
         }
     }
 }

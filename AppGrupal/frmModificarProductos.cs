@@ -141,5 +141,15 @@ namespace AppGrupal
         {
 
         }
+
+        private void btnModificar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnModificar.BackColor = Color.Violet;
+        }
+
+        private void btnModificar_MouseLeave(object sender, EventArgs e)
+        {
+            btnModificar.BackColor = Color.LightGray;
+        }
     }
 }

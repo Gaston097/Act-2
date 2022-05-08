@@ -140,5 +140,15 @@ namespace AppGrupal
                 pbxImagen.Load("https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640");
             }
         }
+
+        private void btnAgregar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnAgregar.BackColor = Color.Violet;
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = Color.LightGray;
+        }
     }
 }

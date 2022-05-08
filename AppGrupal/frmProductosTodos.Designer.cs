@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.cmsProductos = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +62,8 @@
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(647, 323);
             this.dgvProductos.TabIndex = 1;
@@ -110,13 +110,16 @@
             // 
             // btmBuscar
             // 
-            this.btmBuscar.Location = new System.Drawing.Point(584, 21);
+            this.btmBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmBuscar.Location = new System.Drawing.Point(584, 12);
             this.btmBuscar.Name = "btmBuscar";
-            this.btmBuscar.Size = new System.Drawing.Size(75, 22);
+            this.btmBuscar.Size = new System.Drawing.Size(75, 31);
             this.btmBuscar.TabIndex = 3;
             this.btmBuscar.Text = "Agregar";
             this.btmBuscar.UseVisualStyleBackColor = true;
             this.btmBuscar.Click += new System.EventHandler(this.btmAgregar_Click);
+            this.btmBuscar.MouseLeave += new System.EventHandler(this.btmBuscar_MouseLeave);
+            this.btmBuscar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btmBuscar_MouseMove);
             // 
             // lvlFiltro
             // 
@@ -140,13 +143,16 @@
             // 
             // btmFiltrar
             // 
-            this.btmFiltrar.Location = new System.Drawing.Point(584, 384);
+            this.btmFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmFiltrar.Location = new System.Drawing.Point(584, 379);
             this.btmFiltrar.Name = "btmFiltrar";
-            this.btmFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btmFiltrar.Size = new System.Drawing.Size(75, 34);
             this.btmFiltrar.TabIndex = 6;
             this.btmFiltrar.Text = "Filtrar";
             this.btmFiltrar.UseVisualStyleBackColor = true;
             this.btmFiltrar.Click += new System.EventHandler(this.btmFiltrar_Click);
+            this.btmFiltrar.MouseLeave += new System.EventHandler(this.btmFiltrar_MouseLeave);
+            this.btmFiltrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btmFiltrar_MouseMove);
             // 
             // lblFiltroAvanzado
             // 
@@ -232,6 +238,7 @@
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.dgvProductos);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1041, 463);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1041, 424);
             this.Name = "frmProductosTodos";

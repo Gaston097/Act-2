@@ -100,7 +100,7 @@ namespace negocios
                         switch (criterio)
                         {
                             case "Igual a":
-                                consulta += "codigo =" + " '" + filtro + "'";
+                                consulta += "codigo =" + " '" + filtro.ToUpper() + "'";
                                 break;
                             case "Comienza con":
                                 consulta += "codigo like '"+filtro + "%'";
@@ -113,15 +113,85 @@ namespace negocios
                         }
                         break;
                     case "Nombre":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "nombre like '" + filtro + "%'";
+                                break;
+                            case "Termina con":
+                                consulta += "nombre like '%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "nombre like '%" + filtro + "%'";
+                                break;
+                            default:
+                                break;
+                        }
                         break;
                     case "Descripción":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "A.descripcion like '" + filtro + "%'";
+                                break;
+                            case "Termina con":
+                                consulta += "A.descripcion like '%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "A.descripcion like '%" + filtro + "%'";
+                                break;
+                            default:
+                                break;
+                        }
                         break;
                     case "Precio":
+                        switch (criterio)
+                        {
+                            case "Mayor a":
+                                consulta += "A.Precio > " + filtro ;
+                                break;
+                            case "Menor a":
+                                consulta += "A.Precio < " + filtro;
+                                break;
+                            case "Igual a":
+                                consulta += "A.Precio = " + filtro;
+                                break;
+                            default:
+                                break;
+                        }
                         break;
                     case "Marca":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "M.descripcion like '" + filtro + "%'";
+                                break;
+                            case "Termina con":
+                                consulta += "M.descripcion like '%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "M.descripcion like '%" + filtro + "%'";
+                                break;
+                            default:
+                                break;
+                        }
                         break;
                     case "Categoria":
-                    default:
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "C.descripcion like '" + filtro + "%'";
+                                break;
+                            case "Termina con":
+                                consulta += "C.descripcion like '%" + filtro + "'";
+                                break;
+                            case "Contiene":
+                                consulta += "C.descripcion like '%" + filtro + "%'";
+                                break;
+
+                            default:
+                                break;
+                        }
                         break;
                 }
                 datos.setearConsulta(consulta);
