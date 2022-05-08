@@ -19,7 +19,6 @@ namespace AppGrupal
         }
         public void cargarValores(Producto p)
         {
-            listasProductos lp = new listasProductos();
             try
             {
                 txtCodigo.Text = p.codigo.ToString();

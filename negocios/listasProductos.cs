@@ -99,8 +99,8 @@ namespace AppGrupal
                 while (conexion.Lector.Read())
                 {
                     Elemento e = new Elemento();
-                    e.id = (int)conexion.Lector["id"];
-                    e.descripcion = (string)conexion.Lector["descripcion"];
+                    e.Id = (int)conexion.Lector["id"];
+                    e.Descripcion = (string)conexion.Lector["descripcion"];
                     lista.Add(e);
                 }
                 return lista;

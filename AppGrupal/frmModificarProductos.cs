@@ -36,8 +36,8 @@ namespace AppGrupal
                 txtDescripcion.Text = p.descripcion.ToString();
                 txtPrecioVenta.Text = p.precio.ToString();
                 txtImagen.Text = p.imagen.ToString();
-                cbMarca.SelectedValue = p.marca.id;
-                cbCategoria.SelectedValue = p.categoria.id;
+                cbMarca.SelectedValue = p.marca.Id;
+                cbCategoria.SelectedValue = p.categoria.Id;
 
                 this.ShowDialog();
             }

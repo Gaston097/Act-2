@@ -204,12 +204,12 @@ namespace negocios
                         p.imagen = (string)datos.Lector["imagen"];
 
                     p.marca = new Elemento();
-                    p.marca.descripcion = (string)datos.Lector["marca"];
-                    p.marca.id = (int)datos.Lector["idMarca"];
+                    p.marca.Descripcion = (string)datos.Lector["marca"];
+                    p.marca.Id = (int)datos.Lector["idMarca"];
 
                     p.categoria = new Elemento();
-                    p.categoria.descripcion = (string)datos.Lector["categoria"];
-                    p.categoria.id = (int)datos.Lector["idCategoria"];
+                    p.categoria.Descripcion = (string)datos.Lector["categoria"];
+                    p.categoria.Id = (int)datos.Lector["idCategoria"];
 
                     lista.Add(p);
                 }
