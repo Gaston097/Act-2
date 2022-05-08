@@ -36,10 +36,10 @@
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
-            this.btmBuscar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.lvlFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.btmFiltrar = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblFiltroAvanzado = new System.Windows.Forms.Label();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cboCampo = new System.Windows.Forms.ComboBox();
@@ -108,18 +108,18 @@
             this.pbxImagen.TabIndex = 2;
             this.pbxImagen.TabStop = false;
             // 
-            // btmBuscar
+            // btnAgregar
             // 
-            this.btmBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmBuscar.Location = new System.Drawing.Point(584, 12);
-            this.btmBuscar.Name = "btmBuscar";
-            this.btmBuscar.Size = new System.Drawing.Size(75, 31);
-            this.btmBuscar.TabIndex = 3;
-            this.btmBuscar.Text = "Agregar";
-            this.btmBuscar.UseVisualStyleBackColor = true;
-            this.btmBuscar.Click += new System.EventHandler(this.btmAgregar_Click);
-            this.btmBuscar.MouseLeave += new System.EventHandler(this.btmBuscar_MouseLeave);
-            this.btmBuscar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btmBuscar_MouseMove);
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(584, 12);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 31);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
+            this.btnAgregar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAgregar_MouseMove);
             // 
             // lvlFiltro
             // 
@@ -141,18 +141,18 @@
             this.txtFiltro.TabIndex = 5;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
-            // btmFiltrar
+            // btnFiltrar
             // 
-            this.btmFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmFiltrar.Location = new System.Drawing.Point(584, 379);
-            this.btmFiltrar.Name = "btmFiltrar";
-            this.btmFiltrar.Size = new System.Drawing.Size(75, 34);
-            this.btmFiltrar.TabIndex = 6;
-            this.btmFiltrar.Text = "Filtrar";
-            this.btmFiltrar.UseVisualStyleBackColor = true;
-            this.btmFiltrar.Click += new System.EventHandler(this.btmFiltrar_Click);
-            this.btmFiltrar.MouseLeave += new System.EventHandler(this.btmFiltrar_MouseLeave);
-            this.btmFiltrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btmFiltrar_MouseMove);
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Location = new System.Drawing.Point(584, 379);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 34);
+            this.btnFiltrar.TabIndex = 6;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            this.btnFiltrar.MouseLeave += new System.EventHandler(this.btnFiltrar_MouseLeave);
+            this.btnFiltrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnFiltrar_MouseMove);
             // 
             // lblFiltroAvanzado
             // 
@@ -164,7 +164,6 @@
             this.lblFiltroAvanzado.Size = new System.Drawing.Size(42, 16);
             this.lblFiltroAvanzado.TabIndex = 7;
             this.lblFiltroAvanzado.Text = "Filtro";
-            this.lblFiltroAvanzado.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblCriterio
             // 
@@ -176,7 +175,6 @@
             this.lblCriterio.Size = new System.Drawing.Size(57, 16);
             this.lblCriterio.TabIndex = 8;
             this.lblCriterio.Text = "Criterio";
-            this.lblCriterio.Click += new System.EventHandler(this.label2_Click);
             // 
             // cboCampo
             // 
@@ -186,8 +184,7 @@
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(121, 21);
             this.cboCampo.TabIndex = 9;
-            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.cboCampo.DropDownStyleChanged += new System.EventHandler(this.cboCampo_DropDownStyleChanged);
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
             // cboCriterio
             // 
@@ -197,7 +194,6 @@
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(121, 21);
             this.cboCriterio.TabIndex = 10;
-            this.cboCriterio.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // lblCampo
             // 
@@ -218,7 +214,7 @@
             this.txtFiltroAvanzado.Name = "txtFiltroAvanzado";
             this.txtFiltroAvanzado.Size = new System.Drawing.Size(118, 20);
             this.txtFiltroAvanzado.TabIndex = 12;
-            this.txtFiltroAvanzado.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtFiltroAvanzado.TextChanged += new System.EventHandler(this.txtFiltroAvanzado_TextChanged);
             // 
             // frmProductosTodos
             // 
@@ -232,10 +228,10 @@
             this.Controls.Add(this.cboCampo);
             this.Controls.Add(this.lblCriterio);
             this.Controls.Add(this.lblFiltroAvanzado);
-            this.Controls.Add(this.btmFiltrar);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lvlFiltro);
-            this.Controls.Add(this.btmBuscar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.dgvProductos);
             this.MaximizeBox = false;
@@ -252,7 +248,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
         #endregion
         private System.Windows.Forms.DataGridView dgvProductos;
@@ -261,10 +256,10 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.ToolStripMenuItem verDetalleToolStripMenuItem;
-        private System.Windows.Forms.Button btmBuscar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lvlFiltro;
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.Button btmFiltrar;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Label lblFiltroAvanzado;
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.ComboBox cboCampo;

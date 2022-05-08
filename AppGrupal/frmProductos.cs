@@ -21,28 +21,18 @@ namespace AppGrupal
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAgregarProductos ventana = new frmAgregarProductos();
-
             ventana.ShowDialog();
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmModificarProductos ventana = new frmModificarProductos();
-
             ventana.ShowDialog();
         }
 
         private void todosLosProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProductosTodos ventana = new frmProductosTodos();
-
-            //foreach (var item in Application.OpenForms)
-            //{
-            //    if (item.GetType() == typeof(frmProductosTodos))
-            //        return;
-            //}
-
-            //ventana.MdiParent = this;
             ventana.ShowDialog();
         }
 
@@ -50,24 +40,7 @@ namespace AppGrupal
         {
             pboMenu.Load("https://iconape.com/wp-content/png_logo_vector/utn.png");
         }
-
-        private void productosXFiltroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
+        private void lblListarProductos_Click(object sender, EventArgs e)
         {
             frmProductosTodos ventana = new frmProductosTodos();
             ventana.ShowDialog();
@@ -83,7 +56,7 @@ namespace AppGrupal
             lblListarProductos.BackColor= Color.MediumPurple;
         }
 
-        private void label1_Click_2(object sender, EventArgs e)
+        private void lblNuevo_Click(object sender, EventArgs e)
         {
             frmAgregarProductos ventana = new frmAgregarProductos();
             ventana.ShowDialog();
@@ -108,7 +81,6 @@ namespace AppGrupal
         {
             lblSalir.BackColor = Color.Black;
         }
-
         private void lblSalir_Click(object sender, EventArgs e)
         {
             Close();

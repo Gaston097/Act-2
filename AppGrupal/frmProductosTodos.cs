@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominios;
 using negocios;
+
 namespace AppGrupal
 {
     public partial class frmProductosTodos : Form
@@ -38,21 +39,12 @@ namespace AppGrupal
                 dgvProductos.DataSource = listproducto;
 
                 ocultarColumnas();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void ocultarColumnas()
-        {
-            this.dgvProductos.Columns["id"].Visible = false;
-            this.dgvProductos.Columns["imagen"].Visible = false;
-        }
-
-
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -95,13 +87,12 @@ namespace AppGrupal
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvProductos.CurrentRow != null)
+            if (dgvProductos.CurrentRow != null)
             {
-            Producto s = (Producto)dgvProductos.CurrentRow.DataBoundItem;
-            cargarImagen(s.imagen);
+                Producto s = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                cargarImagen(s.imagen);
             }
         }
         private void cargarImagen(string imagen)
@@ -120,18 +111,19 @@ namespace AppGrupal
         {
             try
             {
-                if(dgvProductos.CurrentRow != null) { 
-                Producto p;
-                p = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+                if (dgvProductos.CurrentRow != null)
+                {
+                    Producto p;
+                    p = (Producto)dgvProductos.CurrentRow.DataBoundItem;
 
-                frmDetalleProducto dp = new frmDetalleProducto();
-                dp.cargarValores(p);
+                    frmDetalleProducto dp = new frmDetalleProducto();
+                    dp.cargarValores(p);
 
-                this.mostrarProductosTodos_Load();
-            }
+                    this.mostrarProductosTodos_Load();
+                }
                 else
                 {
-                    MessageBox.Show("Seleccione la fila");
+                    MessageBox.Show("Seleccione la fila!");
                 }
             }
             catch (Exception ex)
@@ -139,15 +131,14 @@ namespace AppGrupal
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void btmAgregar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarProductos alta = new frmAgregarProductos();
             alta.ShowDialog();
             cargar();
         }
 
-        private void btmFiltrar_Click(object sender, EventArgs e)
+        private void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (cboCampo.SelectedIndex > -1 && cboCriterio.SelectedIndex > -1 && txtFiltroAvanzado.Text != "")
             {
@@ -155,20 +146,15 @@ namespace AppGrupal
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroAvanzado.Text;
 
-
                 negocioProducto negocio = new negocioProducto();
                 try
                 {
-
-
                     dgvProductos.DataSource = negocio.filtrar(campo, criterio, filtro);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
-
                 }
-
             }
             else
             {
@@ -176,7 +162,6 @@ namespace AppGrupal
             }
 
         }
-
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             List<Producto> listafiltrada;
@@ -196,7 +181,6 @@ namespace AppGrupal
             dgvProductos.DataSource = listafiltrada;
             ocultarColumnas();
         }
-
         private void frmProductosTodos_Load(object sender, EventArgs e)
         {
             cargar();
@@ -207,39 +191,32 @@ namespace AppGrupal
             cboCampo.Items.Add("Marca");
             cboCampo.Items.Add("Categoria");
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtFiltroAvanzado_TextChanged(object sender, EventArgs e)
         {
-        string opcion = cboCampo.SelectedItem.ToString();
-            if(opcion == "Precio")
+            string opcion = cboCampo.SelectedItem.ToString();
+            if (opcion == "Precio")
             {
                 if (System.Text.RegularExpressions.Regex.IsMatch(txtFiltroAvanzado.Text, "[^0-9]"))
                 {
-                    MessageBox.Show("Please enter only numbers.");
+                    MessageBox.Show("Por favor, solo ingresar numeros!");
                     txtFiltroAvanzado.Text = txtFiltroAvanzado.Text.Remove(txtFiltroAvanzado.Text.Length - 1);
                 }
             }
         }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
             string opcion = cboCampo.SelectedItem.ToString();
             switch (opcion)
             {
                 case "Código":
-                        cboCriterio.Items.Clear();
-                        cboCriterio.Items.Add("Igual a");
-                        cboCriterio.Items.Add("Comienza con");
-                        cboCriterio.Items.Add("Termina con");                  
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Igual a");
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
                     break;
                 case "Nombre":
-                    cboCriterio.Items.Clear();                   
+                    cboCriterio.Items.Clear();
                     cboCriterio.Items.Add("Comienza con");
                     cboCriterio.Items.Add("Termina con");
                     cboCriterio.Items.Add("Contiene");
@@ -268,45 +245,33 @@ namespace AppGrupal
                     cboCriterio.Items.Add("Termina con");
                     cboCriterio.Items.Add("Contiene");
                     break;
-
                 default:
                     break;
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void btnFiltrar_MouseMove(object sender, MouseEventArgs e)
         {
-
+            btnFiltrar.BackColor = Color.Violet;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnAgregar_MouseMove(object sender, MouseEventArgs e)
         {
-
+            btnAgregar.BackColor = Color.Violet;
         }
 
-        private void cboCampo_DropDownStyleChanged(object sender, EventArgs e)
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
         {
-
+            btnAgregar.BackColor= Color.LightGray;
         }
 
-        private void btmFiltrar_MouseMove(object sender, MouseEventArgs e)
+        private void btnFiltrar_MouseLeave(object sender, EventArgs e)
         {
-            btmFiltrar.BackColor = Color.Violet;
+            btnFiltrar.BackColor= Color.LightGray;
         }
-
-        private void btmBuscar_MouseMove(object sender, MouseEventArgs e)
+        private void ocultarColumnas()
         {
-            btmBuscar.BackColor = Color.Violet;
-        }
-
-        private void btmBuscar_MouseLeave(object sender, EventArgs e)
-        {
-            btmBuscar.BackColor= Color.LightGray;
-        }
-
-        private void btmFiltrar_MouseLeave(object sender, EventArgs e)
-        {
-            btmFiltrar.BackColor= Color.LightGray;
+            this.dgvProductos.Columns["id"].Visible = false;
+            this.dgvProductos.Columns["imagen"].Visible = false;
         }
     }
 }

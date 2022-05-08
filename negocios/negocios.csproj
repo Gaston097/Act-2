@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexionSQL.cs" />
+    <Compile Include="listasProductos.cs" />
     <Compile Include="negocioProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

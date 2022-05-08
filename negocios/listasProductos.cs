@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 using System.Data;
 using dominios;
 using negocios;
 
 namespace AppGrupal
 {
-    class listasProductos
+    public class listasProductos
     {
         public List<Producto> listar()
         {
@@ -48,9 +47,9 @@ namespace AppGrupal
 
                 return lista;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                lista = null;
                 return lista;
             }
             finally
@@ -78,9 +77,9 @@ namespace AppGrupal
                 }
                 return lista;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                lista = null;
                 return lista;
             }
             finally
@@ -106,9 +105,9 @@ namespace AppGrupal
                 }
                 return lista;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                lista = null;
                 return lista;
             }
             finally

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-//using System.Windows.Forms;
 using System.Data;
 using dominios;
 
@@ -12,12 +11,12 @@ namespace negocios
 {
     public class negocioProducto
     {
-        public bool agregarProducto(Producto p,int idMarca, int idCategoria)
+        public bool agregarProducto(Producto p, int idMarca, int idCategoria)
         {
             conexionSQL conexion = new conexionSQL();
             SqlCommand comando = new SqlCommand();
             try
-            {     
+            {
                 conexion.setearConsulta("INSERT INTO Articulos VALUES (@Codigo, @Nombre, @Descripcion, @idMarca, @idCategoria, @ImagenUrl, @Precio, 1)");
                 conexion.setearParametro("@Codigo", p.codigo);
                 conexion.setearParametro("@Nombre", p.nombre);
@@ -29,9 +28,8 @@ namespace negocios
                 conexion.ejecutarQuery();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -46,19 +44,18 @@ namespace negocios
             {
                 conexion.setearConsulta("UPDATE Articulos SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, idMarca = @IdMarca, idCategoria = @IdCategoria, Precio = @Precio, ImagenUrl = @ImagenUrl WHERE id = @Id");
                 conexion.setearParametro("@Codigo", p.codigo);
-                conexion.setearParametro("@Nombre",p.nombre);
-                conexion.setearParametro("@Descripcion",p.descripcion);
-                conexion.setearParametro("@IdMarca",idMarca);
-                conexion.setearParametro("@idCategoria",idCategoria);
-                conexion.setearParametro("@Precio",p.precio);
-                conexion.setearParametro("@ImagenUrl",p.imagen);
-                conexion.setearParametro("@Id",p.id);
+                conexion.setearParametro("@Nombre", p.nombre);
+                conexion.setearParametro("@Descripcion", p.descripcion);
+                conexion.setearParametro("@IdMarca", idMarca);
+                conexion.setearParametro("@idCategoria", idCategoria);
+                conexion.setearParametro("@Precio", p.precio);
+                conexion.setearParametro("@ImagenUrl", p.imagen);
+                conexion.setearParametro("@Id", p.id);
                 conexion.ejecutarQuery();
                 return true;
             }
-            catch (Exception ex)
-            {          
-             //   messagebox.Show(ex.Message);
+            catch (Exception)
+            {
                 return false;
             }
             finally
@@ -76,9 +73,8 @@ namespace negocios
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-              //  MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -86,11 +82,10 @@ namespace negocios
                 conexion.cerrarConexion();
             }
         }
-
         public List<Producto> filtrar(string campo, string criterio, string filtro)
         {
             List<Producto> lista = new List<Producto>();
-           conexionSQL datos = new conexionSQL();
+            conexionSQL datos = new conexionSQL();
             try
             {
                 string consulta = "SELECT A.id id, A.codigo codigo, A.nombre nombre, A.descripcion descripcion, A.precio precio, M.Descripcion marca, A.idMarca, C.Descripcion categoria, A.idCategoria, A.ImagenUrl imagen FROM Articulos A INNER JOIN Marcas M on M.id = A.idMarca INNER JOIN Categorias C on C.id = A.IdCategoria  WHERE A.Estado = 1 and ";
@@ -103,7 +98,7 @@ namespace negocios
                                 consulta += "codigo =" + " '" + filtro.ToUpper() + "'";
                                 break;
                             case "Comienza con":
-                                consulta += "codigo like '"+filtro + "%'";
+                                consulta += "codigo like '" + filtro + "%'";
                                 break;
                             case "Termina con":
                                 consulta += "codigo like '%" + filtro + "'";
@@ -148,7 +143,7 @@ namespace negocios
                         switch (criterio)
                         {
                             case "Mayor a":
-                                consulta += "A.Precio > " + filtro ;
+                                consulta += "A.Precio > " + filtro;
                                 break;
                             case "Menor a":
                                 consulta += "A.Precio < " + filtro;

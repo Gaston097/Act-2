@@ -76,7 +76,6 @@
     <Compile Include="frmProductosTodos.Designer.cs">
       <DependentUpon>frmProductosTodos.cs</DependentUpon>
     </Compile>
-    <Compile Include="listasProductos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAgregarProductos.resx">

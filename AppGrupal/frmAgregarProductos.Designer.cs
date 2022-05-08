@@ -234,7 +234,6 @@
             this.Name = "frmAgregarProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar";
-            this.Load += new System.EventHandler(this.frmAgregarProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
