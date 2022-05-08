@@ -149,20 +149,32 @@ namespace AppGrupal
 
         private void btmFiltrar_Click(object sender, EventArgs e)
         {
-            negocioProducto negocio = new negocioProducto();
-            try
+            if (cboCampo.SelectedIndex > -1 && cboCriterio.SelectedIndex > -1 && txtFiltroAvanzado.Text != "")
             {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text;
 
-            string campo = cboCampo.SelectedItem.ToString();
-            string criterio = cboCriterio.SelectedItem.ToString();
-            string filtro = txtFiltroAvanzado.Text;
-                dgvProductos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+                negocioProducto negocio = new negocioProducto();
+                try
+                {
+
+
+                    dgvProductos.DataSource = negocio.filtrar(campo, criterio, filtro);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
-                
+                MessageBox.Show("Seleccione un criterio de busqueda y complete con un filtro");
             }
+
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -198,7 +210,15 @@ namespace AppGrupal
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+        string opcion = cboCampo.SelectedItem.ToString();
+            if(opcion == "Precio")
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(txtFiltroAvanzado.Text, "[^0-9]"))
+                {
+                    MessageBox.Show("Please enter only numbers.");
+                    txtFiltroAvanzado.Text = txtFiltroAvanzado.Text.Remove(txtFiltroAvanzado.Text.Length - 1);
+                }
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

@@ -224,6 +224,8 @@
             this.Controls.Add(this.lblPrecioVenta);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
+            this.MaximumSize = new System.Drawing.Size(645, 554);
+            this.MinimumSize = new System.Drawing.Size(645, 554);
             this.Name = "frmModificarProductos";
             this.Text = "Modificar";
             this.Load += new System.EventHandler(this.frmModificarProductos_Load);

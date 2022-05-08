@@ -35,9 +35,9 @@
             this.todosLosProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblListarProductos = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblNuevo = new System.Windows.Forms.Label();
-            this.lblSalir = new System.Windows.Forms.Label();
             this.pboMenu = new System.Windows.Forms.PictureBox();
+            this.lblSalir = new System.Windows.Forms.Label();
+            this.lblNuevo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboMenu)).BeginInit();
@@ -115,19 +115,14 @@
             this.panel1.Size = new System.Drawing.Size(542, 369);
             this.panel1.TabIndex = 2;
             // 
-            // lblNuevo
+            // pboMenu
             // 
-            this.lblNuevo.AutoSize = true;
-            this.lblNuevo.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNuevo.Location = new System.Drawing.Point(159, 179);
-            this.lblNuevo.Name = "lblNuevo";
-            this.lblNuevo.Size = new System.Drawing.Size(223, 34);
-            this.lblNuevo.TabIndex = 2;
-            this.lblNuevo.Text = "Nuevo Producto";
-            this.lblNuevo.Click += new System.EventHandler(this.label1_Click_2);
-            this.lblNuevo.MouseLeave += new System.EventHandler(this.lblNuevo_MouseLeave);
-            this.lblNuevo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblNuevo_MouseMove);
+            this.pboMenu.Location = new System.Drawing.Point(236, 27);
+            this.pboMenu.Name = "pboMenu";
+            this.pboMenu.Size = new System.Drawing.Size(79, 76);
+            this.pboMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboMenu.TabIndex = 4;
+            this.pboMenu.TabStop = false;
             // 
             // lblSalir
             // 
@@ -145,14 +140,19 @@
             this.lblSalir.MouseLeave += new System.EventHandler(this.lblSalir_MouseLeave);
             this.lblSalir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblSalir_MouseMove);
             // 
-            // pboMenu
+            // lblNuevo
             // 
-            this.pboMenu.Location = new System.Drawing.Point(236, 27);
-            this.pboMenu.Name = "pboMenu";
-            this.pboMenu.Size = new System.Drawing.Size(79, 76);
-            this.pboMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboMenu.TabIndex = 4;
-            this.pboMenu.TabStop = false;
+            this.lblNuevo.AutoSize = true;
+            this.lblNuevo.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNuevo.Location = new System.Drawing.Point(159, 179);
+            this.lblNuevo.Name = "lblNuevo";
+            this.lblNuevo.Size = new System.Drawing.Size(223, 34);
+            this.lblNuevo.TabIndex = 2;
+            this.lblNuevo.Text = "Nuevo Producto";
+            this.lblNuevo.Click += new System.EventHandler(this.label1_Click_2);
+            this.lblNuevo.MouseLeave += new System.EventHandler(this.lblNuevo_MouseLeave);
+            this.lblNuevo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblNuevo_MouseMove);
             // 
             // frmProductos
             // 
@@ -164,6 +164,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximumSize = new System.Drawing.Size(637, 515);
+            this.MinimumSize = new System.Drawing.Size(637, 515);
             this.Name = "frmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM Productos";

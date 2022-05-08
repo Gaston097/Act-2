@@ -200,6 +200,8 @@
             this.Controls.Add(this.lblPrecioVenta);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
+            this.MaximumSize = new System.Drawing.Size(990, 475);
+            this.MinimumSize = new System.Drawing.Size(990, 475);
             this.Name = "frmDetalleProducto";
             this.Text = "frmDetalleProducto";
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
